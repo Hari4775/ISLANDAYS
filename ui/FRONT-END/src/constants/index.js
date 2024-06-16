@@ -93,6 +93,10 @@ const services = [
     title: "snorkeling",
     icon: javascript,
   },
+  {
+    title: "snorkeling",
+    icon: javascript,
+  },
 
 
 ];
