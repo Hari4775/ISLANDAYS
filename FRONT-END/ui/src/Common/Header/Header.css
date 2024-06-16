@@ -1,0 +1,66 @@
+/* MenuComponent.css */
+
+  .nav-texts {
+    margin-left: 533px;
+  }
+  .login-button {
+    background-color: #36369f;
+    color: white;
+  }
+  .login-button:hover {
+    background-color: blue;
+  }
+  .pc-nav-text {
+    color: #1E1E1E;
+    font-size: large;
+  }
+  .pc-nav-text:hover {
+    color: blue;
+  }
+  .navbar-burger {
+    color: #36369f;
+  }
+  .navbar-container {
+    background-color: #1E1E1E;
+    margin-left: 12px;
+  }
+  .nav-text {
+    font-weight: bold;
+    color: #1E1E1E;
+    font-size: large;
+  }
+  .nav-text:hover {
+    color: blue;
+  }
+  .logo {
+    width: 110px;
+    height: auto;
+    margin-left: 15px;
+  }
+  @media (min-width: 200px) {
+    .navbar-container {
+      margin-left: 21px;
+    }
+  }
+  @media (min-width: 600px) { 
+    .logo {
+      width: 160px;
+    }
+  }
+  @media (min-width: 768px) {
+    .logo {
+      width: 160px;
+    }
+  }
+  @media (min-width: 992px) {
+    .logo {
+      width: 160px;
+      margin-left: 35px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .logo {
+      width: 160px;
+      margin-left: 52px;
+    }
+  }

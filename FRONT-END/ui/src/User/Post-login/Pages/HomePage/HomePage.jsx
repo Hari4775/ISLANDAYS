@@ -1,11 +1,15 @@
 import React from 'react'
 import './HomePage.css'
+import HeroPage from '../../../Components/Hero-page/HeroPage'
+
 
 const HomePage = () => {
   return (
-    <>
-      <h1 className='heasd'>ISLAMD DAYS HOME PAGE</h1>
-    </>
+    <div className='w-screen bg-blue-500'>
+     <HeroPage/>
+   
+
+    </div>
   )
 }
 
