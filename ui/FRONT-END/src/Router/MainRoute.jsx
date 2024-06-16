@@ -1,0 +1,18 @@
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import UserIndex from '../User/UserIndex'
+import AdminIndex from '../Admin/AdminIndex'
+
+const MainRoute = () => {
+  return (
+   
+    <BrowserRouter>
+    <Routes>
+        <Route path="/admin" elemet={<AdminIndex/>}/>
+        <Route   path="/" element={<UserIndex/>}/>
+    </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default MainRoute
