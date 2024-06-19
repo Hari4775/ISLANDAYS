@@ -1,4 +1,28 @@
 /* MenuComponent.css */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Adjust the z-index as needed */
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Border for better visibility */
+}
+
+/* Add styles for the mobile menu backdrop and fixed menu */
+.navbar-backdrop {
+  z-index: 999; /* Ensure the backdrop is behind the menu */
+}
+
+.navbar-menu {
+  z-index: 1000; /* Ensure the menu is above the backdrop */
+}
+
+
 
   .nav-texts {
     margin-left: 533px;
@@ -20,17 +44,21 @@
   .navbar-burger {
     color: #36369f;
   }
-  .navbar-container {
+  /* .navbar-container {
     background-color: #1E1E1E;
     margin-left: 12px;
-  }
+  } */
   .nav-text {
     font-weight: bold;
     color: #1E1E1E;
     font-size: large;
+
+
   }
   .nav-text:hover {
-    color: blue;
+    /* color: blue; */
+    background-color: aqua;
+    height: 20px;
   }
   .logo {
     width: 110px;
@@ -39,7 +67,7 @@
   }
   @media (min-width: 200px) {
     .navbar-container {
-      margin-left: 21px;
+      /* margin-left: 21px; */
     }
   }
   @media (min-width: 600px) { 
