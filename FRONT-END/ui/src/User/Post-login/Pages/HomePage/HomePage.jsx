@@ -3,9 +3,10 @@ import './HomePage.css'
 import HeroPage from '../../../Components/HeroPage/HeroPage'
 import AutoPlay from './Slider/Slider'
 import Header from '../../../../Common/Header/Header'
-import { scubaImage } from '../../../../assets/Index'
+import { scubaImage,bgisland} from '../../../../assets/Index'
 import { scubaVideo } from '../../../../assets/Index'
 import HorizontalScrollComponent from '../../../Components/Virtual/Virtual'
+
 
 
 const HomePage = () => {
@@ -20,8 +21,15 @@ const HomePage = () => {
         </video>
       <Header/>
      <HeroPage/>
+    
     </div>
+    <div
+    className="slider-container w-screen h-full bg-cover bg-center"
+    style={{ backgroundImage: `url(${bgisland})` }}
+  >
     <AutoPlay/>
+    </div>
+   
     </>
   )
 }
