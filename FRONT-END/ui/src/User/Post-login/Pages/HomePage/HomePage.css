@@ -1,50 +1,56 @@
-/* .home-page {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-   */
 
-   .home-page {
+  .whatsapp-logo{
+    position: fixed;
+    top: 90%;
+    right: 2%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+  }
+  .insta{
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+
+  }
+ 
+ 
+  .home-page {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    /* height: 100%; */
     overflow: hidden;
   }
   
   /* .video-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure the video is behind other content */
-  
-   */
-  /* Ensure other elements are positioned above the video */
-  .home-page {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  .video-background {
-    position: absolute;
+    background-color: blue;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -10;
   }
+   */
   
-  
-  .components-bg{
-    background-image: ;
-  }
+
+.video-container {
+  position: relative;
+  z-index: 1;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.tagembed-widget {
+  position: relative;
+  z-index: 2;
+}

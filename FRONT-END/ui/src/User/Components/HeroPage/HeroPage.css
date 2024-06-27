@@ -29,3 +29,14 @@
     font-size: xx-large;
     font-weight: bolder;
   }
+  .explore-button{
+    height: 51px;
+    color: white;
+    background-color: transparent;border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+    backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
+    border-width: 1px;
+    border-color: cadetblue;
+   
+  }
+ 

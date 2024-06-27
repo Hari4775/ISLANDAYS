@@ -11,16 +11,17 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 900,
+    speed: 1000,
     autoplaySpeed: 1000,
     cssEase: "linear"
   };
 
   return (
     <div className="slider-container w-11/12 mx-auto ">
+      <h1 className="text-left text-white pt-10 mb-10">Our Service Includes</h1>
       <Slider {...settings}>
         {featers.map((feature, index) => (
           <Card key={index} data={feature} />

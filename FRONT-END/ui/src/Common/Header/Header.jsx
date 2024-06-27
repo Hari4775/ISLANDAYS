@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <div className="navbar-container py-5 bg-transperant  mx-auto "  id="main-header">
+    <div className="navbar-container py-5  mx-auto  "  id="main-header">
       <nav className="relative navbar flex justify-between items-center bg-white w-11/12 lg:mx-14 mx-auto rounded-lg" style={{ padding: '15px' }}>
         <Link className="text-3xl font-bold leading-none" to="/">
           <img
