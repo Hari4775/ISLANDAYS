@@ -19,8 +19,10 @@ const HomePage = () => {
   return (
     <>
       <div className="whatsapp-logo flex">
+        <a href='https://api.whatsapp.com/message/4QD4M525ED3PN1?autoload=1&app_absent=0'>
         {/* <img src={instagram} className='insta'/> */}
         <img src={wa} className="" />
+        </a>
       </div>
 
       {/* <div className='home-page 'style={{ backgroundImage: `url(${scubaImage})` }} > */}
@@ -31,17 +33,18 @@ const HomePage = () => {
         </video>
         <Header />
         <HeroPage />
-        </div>
+      </div>
+      <div className='bg-blue-700'>
        <AutoPlay />
+
     
-      <div>
+     
       <div
       className="tagembed-widget"
       style={{ width: '100%', height: '100%' }}
       data-widget-id="154404"
     ></div>
-
-       
+    
       </div>
     </>
   );

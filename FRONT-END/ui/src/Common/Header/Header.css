@@ -64,8 +64,8 @@
 
   }
   .logo {
-    width: 110px;
-    height: auto;
+    width: 10px;
+    /* height: auto; */
     margin-left: 15px;
   }
   @media (min-width: 200px) {
