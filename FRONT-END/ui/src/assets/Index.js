@@ -4,6 +4,7 @@ import bgisland from './images/pexels-pixabay-373394.jpg'
 import scuba2 from './videos/scuba2.mp4'
 import wa from './images/whatsapp.png'
 import instagram from './images/insta2.png'
+import logoIcon from './images/ISLAND-DAYS-LOGO.png'
 
 
 export {
@@ -12,5 +13,6 @@ export {
     bgisland,
     scuba2,
     wa,
-    instagram
+    instagram,
+    logoIcon
 }

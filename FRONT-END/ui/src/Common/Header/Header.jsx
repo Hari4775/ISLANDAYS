@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Header.css'
+import { logoIcon } from '../../assets/Index';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,8 +15,8 @@ const Header = () => {
       <nav className="relative navbar flex justify-between items-center bg-white w-11/12 lg:mx-14 mx-auto rounded-lg" style={{ padding: '15px' }}>
         <Link className="text-3xl font-bold leading-none" to="/">
           <img
-            className="logo my-2"
-            src=""
+            className="h-10"
+            src={logoIcon}
            
           />
         </Link>
