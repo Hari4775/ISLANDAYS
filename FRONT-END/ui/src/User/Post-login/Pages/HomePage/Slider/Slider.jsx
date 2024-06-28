@@ -5,42 +5,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../../../../../Common/Cards/Card";
+import { featers } from "../../../../../constants/index"
 
 function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 1000,
+    autoplaySpeed: 1000,
     cssEase: "linear"
   };
+
   return (
-
-    <div className="slider-container w-11/12 mx-auto bg-red-500">
-
-
-
-
+    <div className="slider-container w-11/12 mx-auto ">
+      <h1 className="text-left text-white pt-10 mb-10">Our Service Includes</h1>
       <Slider {...settings}>
-        <Card data={"asjdkkffhalsdjkf"}/>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {featers.map((feature, index) => (
+          <Card key={index} data={feature} />
+        ))}
       </Slider>
     </div>
   );

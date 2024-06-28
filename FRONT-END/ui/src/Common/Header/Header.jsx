@@ -1,4 +1,3 @@
-// MenuComponent.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <div className="navbar-container py-5 bg-transperant  mx-auto "  id="main-header">
+    <div className="navbar-container py-5  mx-auto  "  id="main-header">
       <nav className="relative navbar flex justify-between items-center bg-white w-11/12 lg:mx-14 mx-auto rounded-lg" style={{ padding: '15px' }}>
         <Link className="text-3xl font-bold leading-none" to="/">
           <img
@@ -28,12 +27,12 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <ul className="nav-texts hidden lg:flex lg:mx-auto lg:flex lg:items-end lg:w-auto lg:space-x-7">
-          <li><Link className="pc-nav-text" to="/products">Product</Link></li>
-          <li><Link className="pc-nav-text" to="/pricing">Pricing</Link></li>
-          <li><Link className="pc-nav-text" to="/about_us">Book Permit</Link></li>
-          <li><Link className="pc-nav-text" to="/careers">Book Packages</Link></li>
-          <li><Link className="pc-nav-text" to="/talk_to_us">Talk to Us</Link></li>
+        <ul className="nav-texts hidden lg:flex lg:mx-auto lg:items-end lg:w-auto lg:space-x-7">
+          {/* <li><Link className="pc-nav-text" to="/products">Product</Link></li>
+          <li><Link className="pc-nav-text" to="/pricing">Pricing</Link></li> */}
+          <li><Link className="pc-nav-text font-semibold" to="/about_us">Book Permit</Link></li>
+          <li><Link className="pc-nav-text font-semibold" to="/careers">Book Packages</Link></li>
+          <li><Link className="pc-nav-text font-semibold" to="/talk_to_us">Contact Us</Link></li>
         </ul>
         {/* <Link className="mr-10 login-button hidden lg:inline-block py-2 px-6 rounded-full transition duration-200" to="/login_register">
           Login/Register
