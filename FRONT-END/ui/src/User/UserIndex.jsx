@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from './Post-login/Pages/HomePage/HomePage'
 import Header from '../Common/Header/Header'
 import Footer from '../Common/Footer/Footer'
-import { scubaVideo } from '../assets/Index'
+import { scubaVideo, wa } from '../assets/Index'
+import Packages from './Post-login/Pages/packages/Packages'
 
 const UserIndex = () => {
   const videoStyle = {
@@ -20,19 +21,28 @@ const UserIndex = () => {
     position: 'relative',
     zIndex: 1,
   };
+  
 
   return (
   <div>
-  <div>
+     <div className="whatsapp-logo flex">
+        <a href='https://api.whatsapp.com/message/4QD4M525ED3PN1?autoload=1&app_absent=0'>
+        {/* <img src={instagram} className='insta'/> */}
+        <img src={wa} className="" />
+        </a>
+      </div>
+ 
+
 
     {/* <Header/> */}
      <Routes>
       <Route path="/" element={<HomePage/>} />   
+      <Route path="/packages" element={<Packages/>}/>
     </Routes>
     <Footer/>
 
  </div>
- </div>
+
   )
 }
 

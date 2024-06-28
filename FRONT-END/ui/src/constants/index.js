@@ -1,3 +1,32 @@
+
+import { friendsScuba } from "../assets/Index";
+
+export const PackageData =[
+  {
+     id:"couple",
+     title:"Couple Package",
+     image:{friendsScuba}
+  },
+  {
+    id:"friends",
+    title:"Friends Adventure",
+    image:{friendsScuba}
+
+ },
+ {
+  id:"family",
+   title:"My Fam",
+   image:{friendsScuba}
+
+
+  
+}
+]
+
+
+
+
+
 export const featers = [
     {
       id: "about",
