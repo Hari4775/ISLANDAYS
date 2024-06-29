@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Header.css'
+import './Header.css';
 import { logoIcon } from '../../assets/Index';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -10,15 +11,30 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // useEffect(() => {
+  //   const handleOutsideClick = (event) => {
+  //     if (isMenuOpen && !event.target.closest('.navbar-menu')) {
+  //       setIsMenuOpen(false);
+  //     }
+  //   };
+
+  //   if (isMenuOpen) {
+  //     document.addEventListener('click', handleOutsideClick);
+  //   } else {
+  //     document.removeEventListener('click', handleOutsideClick);
+  //   }
+
+  //   // Cleanup event listener on component unmount
+  //   return () => {
+  //     document.removeEventListener('click', handleOutsideClick);
+  //   };
+  // }, [isMenuOpen]);
+
   return (
-    <div className="navbar-container py-5  mx-auto  "  id="main-header">
+    <div className="navbar-container py-5 mx-auto" id="main-header">
       <nav className="relative navbar flex justify-between items-center bg-white w-11/12 lg:mx-14 mx-auto rounded-lg" style={{ padding: '15px' }}>
         <Link className="text-3xl font-bold leading-none" to="/">
-          <img
-            className="h-10"
-            src={logoIcon}
-           
-          />
+          <img className="h-10" src={logoIcon} alt="Logo" />
         </Link>
         <div className="lg:hidden">
           <button className="navbar-burger flex items-center p-3" onClick={toggleMenu}>
@@ -29,15 +45,10 @@ const Header = () => {
           </button>
         </div>
         <ul className="nav-texts hidden lg:flex lg:mx-auto lg:items-end lg:w-auto lg:space-x-7">
-          {/* <li><Link className="pc-nav-text" to="/products">Product</Link></li>
-          <li><Link className="pc-nav-text" to="/pricing">Pricing</Link></li> */}
           <li><Link className="pc-nav-text font-semibold" to="/about_us">Book Permit</Link></li>
-          <li><Link className="pc-nav-text font-semibold" to="/careers">Book Packages</Link></li>
+          <li><Link to="/packages" className="pc-nav-text font-semibold">Packages</Link></li>
           <li><Link className="pc-nav-text font-semibold" to="/talk_to_us">Contact Us</Link></li>
         </ul>
-        {/* <Link className="mr-10 login-button hidden lg:inline-block py-2 px-6 rounded-full transition duration-200" to="/login_register">
-          Login/Register
-        </Link> */}
       </nav>
       {isMenuOpen && (
         <div className="navbar-menu relative z-50">
@@ -46,7 +57,7 @@ const Header = () => {
             <div className="flex items-center mb-8">
               <button className="navbar-close" onClick={toggleMenu}>
                 <svg className="h-6 w-6 fill-current text-gray-900" viewBox="0 0 24 24">
-                  <path d="M18.36 6.64a1 1 0 010 1.41L13.41 12l4.95 4.95a1 1 0 11-1.41 1.41L12 13.41l-4.95 4.95a1 1 0 11-1.41-1.41L10.59 12 5.64 7.05a1 1 0 111.41-1.41L12 10.59l4.95-4.95a1 1 0 011.41 0z"></path>
+                  <path d="M18.36 6.64a1 1 0 010 1.41L13.41 12l4.95 4.95a1 1 0 11-1.41 1.41L12 13.41l-4.95 4.95a1 1 11-1.41-1.41L10.59 12 5.64 7.05a1 1 111.41-1.41L12 10.59l4.95-4.95a1 1 011.41 0z"></path>
                 </svg>
               </button>
             </div>

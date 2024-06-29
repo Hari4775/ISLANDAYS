@@ -5,6 +5,7 @@ import scuba2 from './videos/scuba2.mp4'
 import wa from './images/whatsapp.png'
 import instagram from './images/insta2.png'
 import logoIcon from './images/ISLAND-DAYS-LOGO.png'
+import friendsScuba from './images/friendsScuba.jpg'
 
 
 export {
@@ -14,5 +15,6 @@ export {
     scuba2,
     wa,
     instagram,
-    logoIcon
+    logoIcon,
+   
 }

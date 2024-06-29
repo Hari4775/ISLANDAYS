@@ -7,6 +7,7 @@ import { scubaImage, bgisland } from '../../../../assets/Index';
 import { scubaVideo, scuba2, wa, instagram } from '../../../../assets/Index';
 import HorizontalScrollComponent from '../../../Components/Virtual/Virtual';
 import PinContainer from '../../../Components/Virtual/Virtual';
+import Packages from '../packages/Packages';
 
 const HomePage = () => {
   useEffect(() => {
@@ -18,12 +19,7 @@ const HomePage = () => {
   }, []);
   return (
     <>
-      <div className="whatsapp-logo flex">
-        <a href='https://api.whatsapp.com/message/4QD4M525ED3PN1?autoload=1&app_absent=0'>
-        {/* <img src={instagram} className='insta'/> */}
-        <img src={wa} className="" />
-        </a>
-      </div>
+     
 
       {/* <div className='home-page 'style={{ backgroundImage: `url(${scubaImage})` }} > */}
       <div className="home-page h-screen">
@@ -34,8 +30,9 @@ const HomePage = () => {
         <Header />
         <HeroPage />
       </div>
-      <div className='bg-blue-700'>
+      <div className='bg-black'>
        <AutoPlay />
+       <Packages/>
 
     
      
