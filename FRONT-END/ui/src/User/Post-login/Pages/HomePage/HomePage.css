@@ -13,7 +13,9 @@
     height: 100px; /* Adjust size as needed */
 
   }
- 
+ .mid-container{
+  background-image: url('../../../../assets/images/2565733.jpg');
+ }
  
   .home-page {
     position: relative;
