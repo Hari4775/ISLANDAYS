@@ -1,0 +1,67 @@
+.swipe-heading{
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        font-size: xx-large;
+      
+}
+
+.package-detail-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
+    color: white; /* Ensures text is visible */
+    text-align: center;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5); /* Optional: adds background to make text more readable */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .info-section {
+    position: relative;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5); /* Optional: adds background to make text more readable */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 16px; /* Adjust spacing as needed */
+  }
+  
+  .mr-2 {
+    margin-right: 8px; /* Adjust spacing as needed */
+  }

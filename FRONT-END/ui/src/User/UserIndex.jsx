@@ -25,7 +25,7 @@ const UserIndex = () => {
   
 
   return (
-  <div>
+  <div className='main-container'>
      <div className="whatsapp-logo flex">
         <a href='https://api.whatsapp.com/message/4QD4M525ED3PN1?autoload=1&app_absent=0'>
         {/* <img src={instagram} className='insta'/> */}
