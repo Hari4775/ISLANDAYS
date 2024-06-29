@@ -5,6 +5,7 @@ import Header from '../Common/Header/Header'
 import Footer from '../Common/Footer/Footer'
 import { scubaVideo, wa } from '../assets/Index'
 import Packages from './Post-login/Pages/packages/Packages'
+import PackageDetails from './Components/PackageDetails/PackageDetails'
 
 const UserIndex = () => {
   const videoStyle = {
@@ -34,10 +35,11 @@ const UserIndex = () => {
  
 
 
-    {/* <Header/> */}
+    <Header/>
      <Routes>
-      <Route path="/" element={<HomePage/>} />   
-      <Route path="/packages" element={<Packages/>}/>
+      <Route path="/" element={<HomePage/>} />  
+      <Route path="/packagedetails/:id" element={<PackageDetails/>}/>
+    
     </Routes>
     <Footer/>
 

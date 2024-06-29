@@ -1,29 +1,32 @@
 
-import { friendsScuba } from "../assets/Index";
+import  friendsScuba   from "../assets/images/friendsScuba.jpg";
+import honeymoon from '../assets/images/Tourism-Honeymoon.jpg'
+import fam from '../assets/images/fam.jpg'
 
-export const PackageData =[
+
+export const PackageData = [
   {
-     id:"couple",
-     title:"Couple Package",
-     image:{friendsScuba}
+    id: "couple",
+    title: "Couple Package",
+    image: honeymoon,
+    offer: "15%",
+    description: "4 Nights 3-Day, food_and_Resort, couple-photography, water-adventure",
   },
   {
-    id:"friends",
-    title:"Friends Adventure",
-    image:{friendsScuba}
-
- },
- {
-  id:"family",
-   title:"My Fam",
-   image:{friendsScuba}
-
-
-  
-}
-]
-
-
+    id: "friends",
+    title: "Friends Adventure",
+    description: "4 Nights 3-Day, food_and_Resort, water-sports, explore islands",
+    image: friendsScuba,
+    offer: "13%",
+  },
+  {
+    id: "family",
+    title: "My Fam",
+    image: fam,
+    offer: "10%",
+    description: "4 Nights 3-Day, food_and_Resort,explore islads, local guide",
+  },
+];
 
 
 

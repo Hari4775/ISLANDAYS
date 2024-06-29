@@ -16,5 +16,5 @@ export {
     wa,
     instagram,
     logoIcon,
-    friendsScuba
+   
 }
