@@ -2,7 +2,7 @@
 import  friendsScuba   from "../assets/images/friendsScuba.jpg";
 import honeymoon from '../assets/images/Tourism-Honeymoon.jpg'
 import fam from '../assets/images/fam.jpg'
-import { couple, groupScuba } from "../assets/Index";
+import { bangaram, couple, groupScuba, kayaking, minicoy, scubaActivity, snorkeling, thinnakkara } from "../assets/Index";
 
 
 export const PackageData = [
@@ -47,24 +47,84 @@ export const PackageDetail = [
         day:1,
         food:"Breakfast, Lunch, Dinner ",
         accomadation:"5 star Accomadation",
-        placesVistiting:"bangaram island, Permit varification",
-        activities:"Snorkeling,campfire,"
+        placesVistiting:[{
+          placeName:"bangaram island",
+          placeImage:bangaram
+        },
+        {
+          placeName:"Kavarathy",
+          placeImage:thinnakkara
+        },
+        {
+          placeName:"minicoy",
+          placeImage:minicoy
+        }
+
+      ],
+      activities:[{
+        activityName:"Snorkeling",
+        activityImage:snorkeling
+      },
+      {
+        activityName:"kayaking",
+        activityImage:kayaking
+      },
+      {
+        activityName:"Scuba Dive",
+        activityImage:scubaActivity
+      }
+      
+
+
+    ],
 
       },
       {
         day:2,
         food:"Breakfast, Lunch, Dinner ",
-        accomadation:"5 star Accomadation",
-        placesVistiting:"bangaram island, Permit varification",
-        activities:"Snorkeling,campfire,"
+        accomadation:"5 star Resort",
+        placesVistiting:[{
+          placeName:"bangaram island",
+          placeImage:bangaram
+        },
+        {
+          placeName:"Kavarathy",
+          placeImage:thinnakkara
+        }
+      ],
+        activities:[{
+          activityName:"Snorkeling",
+          activityImage:snorkeling
+        },
+        {
+          placeName:"kayaking",
+          placeImage:kayaking
+        }
+      ],
 
       },
       {
         day:3,
         food:"Breakfast, Lunch, Dinner ",
-        accomadation:"5 star Accomadation",
-        placesVistiting:"bangaram island, Permit varification",
-        activities:"Snorkeling,campfire,"
+        accomadation:"5 star Resort",
+        placesVistiting:[{
+          placeName:"bangaramd",
+          placeImage:bangaram
+        },
+        {
+          placeName:"Kavarathy",
+          placeImage:thinnakkara
+        }
+      ],
+      activities:[{
+        activityName:"Snorkeling",
+        activityImage:snorkeling
+      },
+      {
+        placeName:"kayaking",
+        placeImage:kayaking
+      }
+    ],
 
       }
     ],

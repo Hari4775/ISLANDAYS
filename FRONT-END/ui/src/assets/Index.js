@@ -11,7 +11,12 @@ import bg from './images/bg.jfif'
 import info from'./icons/info.svg'
 import couple from './videos/couple.mp4'
 import groupScuba from './videos/groupScuba.mp4'
-
+import snorkeling from './images/snorkeling.jpg'
+import kayaking from './images/kayaking.jpg'
+import bangaram from './images/bangaram.jpg'
+import thinnakkara from './images/thinnakkara.jpg'
+import scubaActivity from './images/scubaActivity.jpg'
+import minicoy from './images/minicoy.webp'
 
 export {
     scubaImage,
@@ -24,6 +29,12 @@ export {
     bg,
     info,
     couple,
-    groupScuba
+    groupScuba,
+    snorkeling,
+    kayaking,
+    bangaram,
+    thinnakkara,
+    scubaActivity,
+    minicoy
    
 }
