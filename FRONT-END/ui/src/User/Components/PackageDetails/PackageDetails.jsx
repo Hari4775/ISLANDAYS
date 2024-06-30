@@ -14,32 +14,68 @@ const PackageDetails = () => {
   }
 
   return (
-    <div className='package-detail-container'>
+<div className='package-detail-container  '>
     <video autoPlay loop  className='background-video'>
       <source src={packageDetail.bgvideo} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-    <div className='content mt-40'>
-    <h1 className='swipe-heading mb-2'>{packageDetail?.title}</h1>
-    <div className='flex  w-3/12 mx-auto mb-5'>
-        <p className='offer-texts text-white ml-5 text-xl  bg-green-700'>{packageDetail?.offer} Off</p>
-        <p className='offer-texts text-white   ml-auto text-xl text-bold'>₹ {packageDetail?.price}</p>
-
-        {/* <p className='offer-texts text-white ml-10' >{packageDetail?.offer}</p> */}
-    </div>
-    <p className='swipe-heading mb-10'>{packageDetail?.days}</p>
-    <p className='m'>{packageDetail.description}</p>
-      {/* <p className='video-overlay'>{packageDetail.description}</p> */}
-      <div className='info-section bg-red-500'>
-        <p>sdfkjhgsdf</p>
-        <div className='flex items-center mb-4'>
-          <img src={info} alt="Information Icon" className='mr-2' />
-          <div className='w-8/12 mx-auto'>
-          <p className='swipe-heading'>Information</p>
-          </div>
-        </div>
-        <p>Offer: {packageDetail.offer}</p>
+    <div className='content mt-40 w-11/12 mx-auto '>
+       <h1 className='heading mb-2'>{packageDetail?.title}</h1>
+      <div className='flex w-10/12 md:w-6/12 mx-auto mb-5'>
+          <p className='offer-texts text-white ml-5 text-xl  text-green-400 ml-10'>{packageDetail?.offer} Off</p>
+          <p className=' offer-texts ml-10macbook'>{packageDetail?.days}</p>
+          <p className='offer-texts text-white   text-xl text-bold ml-10'>₹ {packageDetail?.price}</p>
       </div>
+      <div className='w-11/12 mx-auto'>
+          <p className='m'>{packageDetail.description}</p>
+      </div>
+     
+    </div>
+
+    <div className='w-full  content  '>
+
+    <div className="container">
+      <div className="timeline flex">
+      <h1 className='swipe-heading'>Package Plan</h1>
+        {packageDetail.plan.map((dayDetail, index) => (
+          <div className="timeline-item mb-10" key={index}>
+          
+            <div className={`timeline-content ${index % 2 === 0 ? 'left' : 'right'}`} >
+                
+              <h2>Day {dayDetail.day}</h2>
+              <p>Food</p>
+              <ul>
+                {dayDetail.food.split(',').map((food, i) => (
+                <li key={i}>{food.trim()}</li>
+                 ))}
+              </ul>
+
+              <p>Accommodation: {dayDetail.accommodation}</p>
+
+              <p>Places Visiting: </p>
+              <ul>
+                {dayDetail.placesVistiting.split(',').map((place, i) => (
+                <li key={i}>{place.trim()}</li>
+                 ))}
+              </ul>
+
+              <p>Activities</p>
+              <ul>
+              {dayDetail.activities.split(',').map((place, i) => (
+               <li key={i}>{place.trim()}</li>
+               ))}
+             </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className='w-4/5 ml-auto'>
+    <p className='text-white  booking-form'>sdjkfhsjkhd</p>
+
+    </div>
+    <p className='text-white'>sdjkfhsjkhd</p>
     </div>
   </div>
 

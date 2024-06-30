@@ -1,11 +1,16 @@
-.swipe-heading{
+.heading{
         color: white;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bolder;
-        font-size: xx-large;
+        font-size: 50px;
       
 }
-
+.sub-heading{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
 .package-detail-container {
     position: relative;
     width: 100%;
@@ -64,4 +69,13 @@
   
   .mr-2 {
     margin-right: 8px; /* Adjust spacing as needed */
+  }
+
+   
+  .booking-form{
+    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
+    backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Border for better visibility */
+    border-radius: 10px;
+    height: 200px;
   }

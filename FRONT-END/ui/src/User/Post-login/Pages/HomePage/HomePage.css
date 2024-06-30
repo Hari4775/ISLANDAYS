@@ -17,6 +17,15 @@
   background-image: url('../../../../assets/images/2565733.jpg');
  }
  
+ .background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
   .home-page {
     position: relative;
     width: 100%;
