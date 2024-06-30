@@ -35,12 +35,16 @@ const HomePage = () => {
        <Packages/>
 
     
+       <iframe src="https://widget.taggbox.com/157839" style={{width:'100%',height:'600px',border:'none'}}></iframe>
      
-      <div
+      {/* <div
       className="tagembed-widget"
       style={{ width: '100%', height: '100%' }}
       data-widget-id="154404"
-    ></div>
+    >
+
+
+    </div> */}
     
       </div>
     </>
