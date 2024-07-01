@@ -65,3 +65,11 @@
   position: relative;
   z-index: 2;
 }
+
+.happy-clients{
+  margin-top: 100px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: xx-large;
+  }
