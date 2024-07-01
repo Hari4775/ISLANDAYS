@@ -37,9 +37,9 @@ const HeroPage = () => {
 
   return (
     <div className='hero-page h-screen w-screen flex items-start'>
-      <div className='w-1/2 mr-auto ml-20'>
+      <div className='w-1/2 mr-auto md:ml-20 ml-5'>
         <p className='text-white text-left'>Welcome to</p>
-        <h1 className='text-white heading text-left text-6xl mb-12'>ISLAND DAYS</h1>
+        <h1 className='text-white text-left md:text-6xl text-2xl mb-12 '>ISLAND DAYS</h1>
         <div className='flex items-center mt-4'>
 
         {/* <motion.button

@@ -37,12 +37,12 @@ const Header = () => {
           <img className="h-10" src={logoIcon} alt="Logo" />
         </Link>
         <div className="lg:hidden">
-          <button className="navbar-burger flex items-center p-3" onClick={toggleMenu}>
+          {/* <button className="navbar-burger flex items-center p-3" onClick={toggleMenu}>
             <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Mobile menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
-          </button>
+          </button> */}
         </div>
         <ul className="nav-texts hidden lg:flex lg:mx-auto lg:items-end lg:w-auto lg:space-x-7">
           <li><Link className="pc-nav-text font-semibold" to="/about_us">Book Permit</Link></li>

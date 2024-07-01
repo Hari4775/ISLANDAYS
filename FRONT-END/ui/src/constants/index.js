@@ -212,19 +212,19 @@ export const PackageDetail = [
 
 export const featers = [
     {
-      id: "about",
-      title: "About",
+      id: "vehicle",
+      title: "vehicle",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "Resort",
+      title: "5 star accomadation",
     },
     {
-      id: "Homely meals",
-      title: "Homely meals",
+      id: "Food",
+      title: "Food",
     },
     {
-        id: "Guide",
+        id: "Local Guide",
         title: "Guide",
       },
       {
@@ -240,12 +240,7 @@ export const featers = [
         title: "Scuba Dive",
       },
       {
-        id: "contact",
-        title: "Contact",
+        id: "Perimit",
+        title: "island Permit",
       },
-    {
-      id: "source-code",
-      title: "Source Code",
-      link: "http://www.github.com/sanidhyy/3d-portfolio/",
-    },
   ];
