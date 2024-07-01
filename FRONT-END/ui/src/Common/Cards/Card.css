@@ -1,6 +1,7 @@
 .card{
     background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
-    backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
+    backdrop-filter: blur(5px); /* Optional: Blur effect for the background */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Border for better visibility */
   
 }
+

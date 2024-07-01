@@ -30,7 +30,7 @@ const HomePage = () => {
         <Header />
         <HeroPage />
       </div>
-      <div className='bg-black'>
+      <div className=''>
        <AutoPlay />
        <Packages/>
 

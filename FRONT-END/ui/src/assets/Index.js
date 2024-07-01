@@ -17,6 +17,8 @@ import bangaram from './images/bangaram.jpg'
 import thinnakkara from './images/thinnakkara.jpg'
 import scubaActivity from './images/scubaActivity.jpg'
 import minicoy from './images/minicoy.webp'
+import map from './icons/Map.svg'
+
 
 export {
     scubaImage,
@@ -35,6 +37,8 @@ export {
     bangaram,
     thinnakkara,
     scubaActivity,
-    minicoy
+    minicoy,
+    map
+
    
 }

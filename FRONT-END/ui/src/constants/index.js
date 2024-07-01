@@ -2,7 +2,7 @@
 import  friendsScuba   from "../assets/images/friendsScuba.jpg";
 import honeymoon from '../assets/images/Tourism-Honeymoon.jpg'
 import fam from '../assets/images/fam.jpg'
-import { bangaram, couple, groupScuba, kayaking, minicoy, scubaActivity, snorkeling, thinnakkara } from "../assets/Index";
+import { bangaram, couple, groupScuba, kayaking, map, minicoy, scubaActivity, snorkeling, thinnakkara, wifi } from "../assets/Index";
 
 
 export const PackageData = [
@@ -214,6 +214,7 @@ export const featers = [
     {
       id: "vehicle",
       title: "vehicle",
+      image:map
     },
     {
       id: "Resort",
@@ -233,7 +234,7 @@ export const featers = [
       },
       {
         id: "Snorkeling",
-        title: "Snorkeling",
+        title: map,
       },
       {
         id: "Scuba Dive",
@@ -243,4 +244,5 @@ export const featers = [
         id: "Perimit",
         title: "island Permit",
       },
+      
   ];
