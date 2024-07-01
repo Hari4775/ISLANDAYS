@@ -9,7 +9,7 @@ const Card = ({ data }) => {
       </div>
       <div className="absolute inset-0 transform rounded-lg  card  transition duration-300  ">
         <div className="h-full w-full  rounded-lg   flex flex-col justify-center items-center p-4">
-          {/* <img src="../../../../../assets/images/group-scuba.jpg" alt="Placeholder" className="h-16 w-16 mb-2"/> */}
+          <img src={data?.image}  alt="Placeholder" className="h-16 w-16"/>
           <h2 className="text-xl font-bold mb-1 text-blue-400">{data?.title}</h2>
           {/* <p className="text-gray-700">{data?.description}</p> */}
         </div>

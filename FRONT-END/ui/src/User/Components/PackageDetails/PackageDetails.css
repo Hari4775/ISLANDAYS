@@ -1,8 +1,8 @@
 .heading{
         color: white;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: bolder;
-        font-size: 50px;
+        /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+        /* font-weight: bolder; */
+        /* font-size: 50px; */
       
 }
 .sub-heading{
@@ -73,14 +73,14 @@
     margin-right: 8px; /* Adjust spacing as needed */
   }
 
-   
-  .booking-form{
-    background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
-    backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
+  .booking-form {
+    background: rgba(255, 255, 255, 0.50); /* Slightly transparent background */
+    backdrop-filter: blur(20px); /* Increased blur effect */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Border for better visibility */
     border-radius: 10px;
     height: 200px;
-  }
+}
+
   .timeline{
     background: rgba(255, 255, 255, 0.15); /* Slightly transparent background */
     backdrop-filter: blur(10px); /* Optional: Blur effect for the background */
@@ -88,3 +88,5 @@
     border-radius: 10px;
 
   }
+
+  
