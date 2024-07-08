@@ -41,8 +41,7 @@ const UserIndex = () => {
       <Route path="/packagedetails/:id" element={<PackageDetails/>}/>
     
     </Routes>
-    <Footer/>
-
+{/* <Footer/> */}
  </div>
 
   )

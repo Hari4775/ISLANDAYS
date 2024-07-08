@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { PackageData } from './path_to_your_data_file'; // Adjust the path accordingly
 import { PackageDetail } from '../../../constants/index';
-import { info } from '../../../assets/Index';
+import { camera, info } from '../../../assets/Index';
 import './PackageDetails.css'
+import { Line } from '../../../assets/Index';
+
 
 const PackageDetails = () => {
   const [placeImage, setPlaceImages] = useState(null);
@@ -28,26 +30,51 @@ const PackageDetails = () => {
 
   return (
     <div className='package-detail-container'>
-      <video autoPlay loop className='background-video h-screen'>
+      <video autoPlay loop className='background-video h-full'>
         <source src={packageDetail.bgvideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className='content' style={{ backgroundImage: `url(${placeImage || packageDetail.bgimage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className='content mt-32  mx-auto'>
-          <h1 className='heading mb-5 text-3xl md:text-lg'>{packageDetail?.title}</h1>
-          {/* <p className='text-xs'>{packageDetail.description}</p> */}
+      <div className='content mb-10' >
+        <div className='content mt-48  mx-auto'>
+          <h1 className='heading mb-10 text-3xl md:text-lg'>{packageDetail?.title}</h1>
+         
+          <img className='w-full h-2 text-black mb-20' src={Line}/>
+          
           <div className='flex w-screen  md:w-1/2 mx-auto  mb-5 timeline'>
             {/* <p className='offer-texts text-white  text-green-400'>{packageDetail?.offer} Off</p> */}
             <p className='offer-texts text-xl lg:text-3xl text-bold ml-10'>{packageDetail?.days}</p>
             <p className='offer-texts text-white  lg:text-3xl text-bold ml-auto mr-10'>₹ {packageDetail?.price}</p>
           </div>
-          <div className='w-11/12 mx-auto'>
-           
+          <div className='w-8/12 mx-auto mb-10 '>
+                     <p className='text-lg '>{packageDetail.description}</p>
           </div>
-          <h1 className='heading mb-2 mt-14'>Tour Plan</h1>
-        </div>
+          <div className='button w-2/12 mx-auto'>Book Package</div>
 
-        <div className='w-11/12 mx-auto content'>
+         
+          {/* <h1 className='heading mb-2 mt-14'>Tour Plan</h1> */}
+        </div>
+      </div>
+      <div className='w-10/12 mx-auto '>
+        <h1 className='sub-heading text-left text-blue-700'>ADDITIONAL FEATURES</h1>
+        <div className='w-full flex'>
+          <div className='card w-1/5 h-32 rounded-lg bg-green-500 mx-2'>
+            <h1>skdjfhjksdfh</h1>
+            <img src={camera}/>
+          </div>
+          <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
+            <h1>skdjfhjksdfh</h1>
+          </div>
+      
+
+        <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
+            <h1>skdjfhjksdfh</h1>
+          </div>
+          <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
+            <h1>skdjfhjksdfh</h1>
+          </div>
+        </div>
+      </div>
+        {/* <div className='w-11/12 mx-auto content'>
           <div className="container">
             <div className="timeline w-full md:w-3/5 mx-auto flex mb-5 ">
               {packageDetail.plan.map((dayDetail, index) => (
@@ -64,10 +91,10 @@ const PackageDetails = () => {
             </div>
             {packageDetail.plan.map((dayDetail, index) => (
               selectedDay === dayDetail.day && (
-                <div className="day-details timeline h-full mb-5" key={index}>
+                <div className="day-details timeline h-full mb-5  w-full md:w-3/5 mx-auto" key={index} style={{ backgroundImage: `url(${placeImage || packageDetail.bgimage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                   <div className={`timeline-content ${index % 2 === 0 ? 'left' : 'right'}`}>
                     <div className=' w-1/2 mx-auto'>
-                  
+                    <h2 className='py-10'>DAY {dayDetail.day} PLAN</h2>
                     <p>FOOD</p>
                     <div>
                     <ul>
@@ -89,6 +116,7 @@ const PackageDetails = () => {
                         </li>
                       ))}
                     </ul>
+                    <div className='bg-red-500'>
                     <p>ACTIVITIES</p>
                     <ul>
                       {dayDetail?.activities.map((place, i) => (
@@ -101,6 +129,7 @@ const PackageDetails = () => {
                         </li>
                       ))}
                     </ul>
+                    </div>
                   </div>
                   </div>
                 </div>
@@ -109,7 +138,11 @@ const PackageDetails = () => {
           </div>
         </div>
       </div>
+    </div> */}
     </div>
+
+
+
   );
 };
 export default PackageDetails;

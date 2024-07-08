@@ -18,6 +18,8 @@ import thinnakkara from './images/thinnakkara.jpg'
 import scubaActivity from './images/scubaActivity.jpg'
 import minicoy from './images/minicoy.webp'
 import map from './icons/Map.svg'
+import Line from './icons/Line21.svg'
+import camera from './icons/Camera.png'
 
 
 export {
@@ -38,7 +40,8 @@ export {
     thinnakkara,
     scubaActivity,
     minicoy,
-    map
+    map,
+    Line,camera
 
    
 }
