@@ -25,10 +25,12 @@
   }
   
   .heading{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /* font-size: 30px; */
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
     font-weight: bolder;
-  }
+     font-size: 20px;
+  
+}
   .explore-button{
     height: 51px;
     color: white;
