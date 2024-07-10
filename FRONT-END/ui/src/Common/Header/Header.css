@@ -35,9 +35,9 @@
     background-color: blue;
   }
   .pc-nav-text {
-    color: #1E1E1E;
+   
     font-size: large;
-    color: white;
+    color: rgb(12, 74, 124);
   }
   .pc-nav-text:hover {
     color: blue;
@@ -64,7 +64,7 @@
 
   }
   .logo {
-    width: 10px;
+    width: 100px;
     /* height: auto; */
     margin-left: 15px;
   }

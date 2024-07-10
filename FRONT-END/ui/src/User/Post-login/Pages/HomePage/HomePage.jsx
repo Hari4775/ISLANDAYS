@@ -20,26 +20,23 @@ const HomePage = () => {
 
       {/* <div className='home-page 'style={{ backgroundImage: `url(${scubaImage})` }} > */}
       <div className="home-page h-screen ">
-        <video className="video-background" autoPlay loop >
+        <video className="video-background" autoPlay loop muted>
           <source src={scuba2} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <HeroPage />
-      
-        </div>
-        <div className='mid-container'>
+      </div>
+      <div className='mid-container h-full'>
        <AutoPlay/>
        <Services/>
-       <Virtual/>
+       {/* <Virtual/> */}
        <Packages/>
-      
-      
-      <h1 className='happy-clients'>OUR HAPPY CLIENTS</h1>
-       <iframe src="https://widget.taggbox.com/157839" style={{width:'100%',height:'600px',border:'none'}}></iframe>
-      
-       <Footer/>
-       </div>
-   
+    
+      <div className='mb-20  w-11/12 mx-auto'>
+       <h1 className='happy-clients  '>OUR HAPPY CLIENTS</h1>
+       <iframe src="https://widget.taggbox.com/157839" style={{width:'100%',height:'700px',border:'none'}}></iframe>
+      </div>   
+      </div> 
     </>
   );
 };

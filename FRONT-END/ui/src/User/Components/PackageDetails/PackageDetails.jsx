@@ -54,12 +54,12 @@ const PackageDetails = () => {
           {/* <h1 className='heading mb-2 mt-14'>Tour Plan</h1> */}
         </div>
       </div>
-      <div className='w-10/12 mx-auto '>
+      <div className='w-10/12 mx-auto mb-32'>
         <h1 className='sub-heading text-left text-blue-700'>ADDITIONAL FEATURES</h1>
         <div className='w-full flex'>
           <div className='card w-1/5 h-32 rounded-lg bg-green-500 mx-2'>
             <h1>skdjfhjksdfh</h1>
-            <img src={camera}/>
+            {/* <img src={camera}/> */}
           </div>
           <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
             <h1>skdjfhjksdfh</h1>

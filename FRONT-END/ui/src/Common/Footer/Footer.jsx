@@ -1,10 +1,9 @@
 import React from 'react'
-import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className='footer '>
-        <h1  className='text-center text-green-500 text-5xl font-bold info-section '> from H2</h1>
+    <div className='bg-slate-950 h-10 -mt-10'>
+        <h1 className='text-center text-white text-sm font-bold pt-2'>Copyright © Island_days</h1>
       
     </div>
   )

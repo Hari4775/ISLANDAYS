@@ -20,6 +20,11 @@ import minicoy from './images/minicoy.webp'
 import map from './icons/Map.svg'
 import Line from './icons/Line21.svg'
 import camera from './icons/Camera.png'
+import roundedImage from './icons/Ellipse 794.png'
+import rounded1Image from './icons/Ellipse 793.png'
+import sendImage from './icons/letter_send 1.png'; 
+
+
 
 
 export {
@@ -41,7 +46,8 @@ export {
     scubaActivity,
     minicoy,
     map,
-    Line,camera
+    Line,camera,
+    roundedImage,rounded1Image, sendImage
 
    
 }
