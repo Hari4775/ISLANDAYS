@@ -34,20 +34,20 @@ const Header = () => {
     <div className="navbar-container py-5 mx-auto" id="main-header">
       <nav className="relative navbar flex justify-between items-center bg-white w-11/12 lg:mx-14 mx-auto rounded-lg" style={{ padding: '15px' }}>
         <Link className="text-3xl font-bold leading-none" to="/">
-          <img className="h-10" src={logoIcon} alt="Logo" />
+          <img className=" w-32" src={logoIcon} alt="Logo" />
         </Link>
         <div className="lg:hidden">
-          {/* <button className="navbar-burger flex items-center p-3" onClick={toggleMenu}>
+          <button className="navbar-burger flex items-center p-3" onClick={toggleMenu}>
             <svg className="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <title>Mobile menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
-          </button> */}
+          </button>
         </div>
         <ul className="nav-texts hidden lg:flex lg:mx-auto lg:items-end lg:w-auto lg:space-x-7">
           <li><Link className="pc-nav-text font-semibold" to="/about_us">Book Permit</Link></li>
           <li><Link to="/packages" className="pc-nav-text font-semibold">Packages</Link></li>
-          <li><Link className="pc-nav-text font-semibold" to="/talk_to_us">Contact Us</Link></li>
+          <li><Link className="pc-nav-text font-semibold" to="/contact-us">Contact Us</Link></li>
         </ul>
       </nav>
       {isMenuOpen && (

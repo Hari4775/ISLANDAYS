@@ -15,18 +15,18 @@ function AutoPlay() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 1000,
+    speed: 2000,
+    autoplaySpeed: 2000,
     cssEase: "linear"
   };
 
   return (
-    <div className="slider-container w-11/12 mx-auto ">
-      <h1 className=" slider-heading text-left  pt-10  ">All Packages includes</h1>
-      <p className="slider-text text-left md:text-lg text-sm mb-5 "><span className="text-lg font-bold">without any additional costs </span> We provide these offers with our all packages</p>
+    <div className="slider-container w-10/12 mx-auto my-10">
+      <h1 className=" slider-heading text-left  pt-10 ">All Packages includes</h1>
+      <p className="slider-text text-left md:text-lg text-sm mb-5 text-black"><span className="text-lg font-bold">without any additional costs </span> We provide these offers with our all packages</p>
       <Slider {...settings}>
         {featers.map((feature, index) => (
-          <Card key={index} data={feature} />
+          <Card key={index} data={feature}/>
         ))}
       </Slider>
     </div>

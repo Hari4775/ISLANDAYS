@@ -6,7 +6,7 @@ import Footer from '../Common/Footer/Footer'
 import { scubaVideo, wa } from '../assets/Index'
 import Packages from './Post-login/Pages/packages/Packages'
 import PackageDetails from './Components/PackageDetails/PackageDetails'
-
+import ConnectUs from './Post-login/Pages/Contact-us/Contact-us'
 const UserIndex = () => {
   const videoStyle = {
     position: 'absolute',
@@ -32,16 +32,13 @@ const UserIndex = () => {
         <img src={wa} className="" />
         </a>
       </div>
- 
-
-
     <Header/>
      <Routes>
       <Route path="/" element={<HomePage/>} />  
       <Route path="/packagedetails/:id" element={<PackageDetails/>}/>
-    
-    </Routes>
-{/* <Footer/> */}
+      <Route path='/contact-us' element={<ConnectUs/>}/>
+     </Routes>
+    <Footer/>
  </div>
 
   )
