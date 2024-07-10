@@ -14,8 +14,11 @@
 
   }
  .mid-container{
-  background-image: url('../../../../assets/images/2565733.jpg');
- }
+  background-image: url('../../../../assets/images/picsart-background-e2a6ww6wu3mtn4x0.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
  
  .background-video {
   width: 100%;

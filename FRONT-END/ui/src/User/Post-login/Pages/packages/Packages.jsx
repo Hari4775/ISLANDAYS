@@ -24,7 +24,7 @@ const Packages = () => {
     </p>
   </div>
   
-<div className="flex overflow-x-auto overflow-y-hidden w-full  space-x-3 md:space-x-2 h-72">
+<div className="flex  overflow-y-hidden md:w-11/12 mx-auto w-full  space-x-3 md:space-x-2 h-72">
   {PackageData.map((pkg) => (
     <div
       key={pkg.id}

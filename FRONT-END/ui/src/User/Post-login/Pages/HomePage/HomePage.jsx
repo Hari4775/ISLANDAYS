@@ -10,6 +10,7 @@ import PinContainer from '../../../Components/Virtual/Virtual';
 import Packages from '../packages/Packages';
 import Footer from '../../../../Common/Footer/Footer';
 import Virtual from '../../../Components/Virtual/Virtual';
+import Services from '../../../Components/Services/Services';
 
 const HomePage = () => {
 
@@ -18,19 +19,18 @@ const HomePage = () => {
      
 
       {/* <div className='home-page 'style={{ backgroundImage: `url(${scubaImage})` }} > */}
-      <div className="home-page h-full ">
+      <div className="home-page h-screen ">
         <video className="video-background" autoPlay loop >
           <source src={scuba2} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <HeroPage />
       
-      
+        </div>
+        <div className='mid-container'>
        <AutoPlay/>
-       </div>
-       <div className='bg-blue-700'>
+       <Services/>
        <Virtual/>
-      
        <Packages/>
       
       
