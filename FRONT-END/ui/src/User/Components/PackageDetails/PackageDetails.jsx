@@ -14,6 +14,7 @@ const PackageDetails = () => {
   const { id } = useParams();
   console.log(PackageDetail, "datata");
   const packageDetail = PackageDetail.find(pkg => pkg.id === id);
+  console.log(packageDetail,"package dertails")
 
   console.log(placeImage, "images");
   if (!packageDetail) {
@@ -34,7 +35,7 @@ const PackageDetails = () => {
         <source src={packageDetail.bgvideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className='content mb-10' >
+      <div className='content mb-20' >
         <div className='content mt-48  mx-auto'>
           <h1 className='heading mb-10 text-3xl md:text-lg'>{packageDetail?.title}</h1>
          
@@ -48,7 +49,7 @@ const PackageDetails = () => {
           <div className='w-8/12 mx-auto mb-10 '>
                      <p className='text-lg '>{packageDetail.description}</p>
           </div>
-          <div className='button w-2/12 mx-auto'>Book Package</div>
+          <div className='button w-2/12 mx-auto flex jsus'>Book Package</div>
 
          
           {/* <h1 className='heading mb-2 mt-14'>Tour Plan</h1> */}
@@ -56,7 +57,7 @@ const PackageDetails = () => {
       </div>
       <div className='w-10/12 mx-auto mb-32'>
         <h1 className='sub-heading text-left text-blue-700'>ADDITIONAL FEATURES</h1>
-        <div className='w-full flex'>
+        <div className='w-full flex bg-blue-500' >
           <div className='card w-1/5 h-32 rounded-lg bg-green-500 mx-2'>
             <h1>skdjfhjksdfh</h1>
             {/* <img src={camera}/> */}
@@ -66,13 +67,16 @@ const PackageDetails = () => {
           </div>
       
 
-        <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
+          <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
             <h1>skdjfhjksdfh</h1>
           </div>
           <div className='card w-1/5 rounded-lg bg-green-500  mx-2'>
             <h1>skdjfhjksdfh</h1>
           </div>
         </div>
+      </div>
+      <div className=' bg-red-400 w-10/12'>
+      <h1 className='bg-yellow-500'>sadljkfkhasdkjfh</h1>
       </div>
         {/* <div className='w-11/12 mx-auto content'>
           <div className="container">

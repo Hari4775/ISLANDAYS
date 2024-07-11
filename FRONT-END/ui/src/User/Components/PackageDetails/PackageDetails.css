@@ -6,7 +6,7 @@
       
 }
 .sub-heading{
-    color: white;
+    color: green;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 40px;
@@ -19,11 +19,7 @@
   
   .background-video {
     width: 100%;
-    
     object-fit: cover;
-    top: 0;
-    left: 0;
-
   }
   
   .content {
