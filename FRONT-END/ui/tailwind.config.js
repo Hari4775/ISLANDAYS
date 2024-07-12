@@ -6,7 +6,12 @@ module.exports = {
   darkMode: 'class',
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'Helvetica', 'Arial', 'sans-serif'],
+        code: ['source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New', 'monospace'],
+      },
+    },
   },
   plugins: [],
 }

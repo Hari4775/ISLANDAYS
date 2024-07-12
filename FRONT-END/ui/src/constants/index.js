@@ -40,7 +40,7 @@ export const PackageDetail = [
     days:"4 Days 3 Nights",
     activitys:"Snorkeling,Scuba dive",
     places:"Thinnakkara, Bangaram",
-    price:"25000 per couple",
+    price:"25000",
     description: "Embark on a romantic getaway with our exclusive Couple Package, offering a 15% discount for a limited time. This 4-day, 3-night adventure is priced at ₹25,000 per couple and promises an unforgettable experience in the stunning locales of Thinnakkara and Bangaram.",
     plan:[
       {
@@ -140,7 +140,7 @@ export const PackageDetail = [
     days:"4 Days 3 Nights",
     activitys:"Snorkeling,Scuba dive",
     places:"Thinnakkara, Bangaram",
-    price:"25000 per couple",
+    price:"25000",
     description: "4 Nights 3-Day, food_and_Resort, couple-photography, water-adventure",
     plan:[
       {
@@ -179,7 +179,7 @@ export const PackageDetail = [
     days:"4 Days 3 Nights",
     activitys:"Snorkeling,Scuba dive",
     places:"Thinnakkara, Bangaram",
-    price:"25000 per couple",
+    price:"25000",
     description: "4 Nights 3-Day, food_and_Resort, couple-photography, water-adventure",
     plan:[
       {

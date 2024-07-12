@@ -26,8 +26,8 @@ import sendImage from './icons/letter_send 1.png'
 import experience from './icons/experience.svg'
 import price from './icons/price.svg'
 import secure from './icons/secure.svg'
-
-
+import bookmark from "./icons/bookmark.svg"
+import  HOTEL from "./icons/HOTEL.png"
 
 export {
     scubaImage,
@@ -50,7 +50,8 @@ export {
     map,
     Line,camera,
     roundedImage,rounded1Image, sendImage,
-    price,secure,experience
+    price,secure,experience,
+    bookmark,HOTEL
 
 
    

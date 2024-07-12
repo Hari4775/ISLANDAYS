@@ -1,0 +1,60 @@
+.image-container{
+
+
+
+}
+.description-container{
+  overflow-y: auto;
+}
+
+.package-name{
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: xx-large;
+  }
+
+.special-price{
+  color: #388e3c;
+  font-weight: 500;
+}
+.real-price{
+  font-size: large;
+  color: gray;
+}
+.offer-persentage{
+  color: #388e3c;
+  font-weight: 500;
+  font-size: large;
+
+}
+li{
+  color: black;
+  font-weight: bolder;
+
+}
+.duration-text{
+  font-weight: 500;
+  color: #878787;
+}
+.duration-value{
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+
+
+}
+.small-image{
+  border-radius: 10px;
+}
+.accomodation-container{
+  border-radius: 10px;
+  border: 2px solid #ffffff; /* White border */
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.4), 0 6px 20px rgba(255, 255, 255, 0.6);
+
+}
+.day-details {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 255, 0.4), 0 6px 20px rgba(255, 255, 255, 0.6);
+}
+

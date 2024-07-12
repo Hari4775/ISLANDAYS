@@ -5,8 +5,8 @@ import Header from '../Common/Header/Header'
 import Footer from '../Common/Footer/Footer'
 import { scubaVideo, wa } from '../assets/Index'
 import Packages from './Post-login/Pages/packages/Packages'
-import PackageDetails from './Components/PackageDetails/PackageDetails'
 import ConnectUs from './Post-login/Pages/Contact-us/Contact-us'
+import PackageDetails from './Post-login/Pages/PackageDetails/PackageDetails'
 const UserIndex = () => {
   const videoStyle = {
     position: 'absolute',

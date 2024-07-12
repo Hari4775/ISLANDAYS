@@ -1,13 +1,12 @@
-body {
-  margin: 0;
-  font-family: "moderna"
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply m-0 font-sans;
+}
+
+code {
+  @apply font-code;
+}
