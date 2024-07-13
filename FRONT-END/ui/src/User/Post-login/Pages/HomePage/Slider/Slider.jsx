@@ -12,7 +12,7 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -21,7 +21,7 @@ function AutoPlay() {
   };
 
   return (
-    <div className="slider-container w-10/12 mx-auto my-10">
+    <div className="slider-container w-10/12 mx-auto my-10 bg-red-500">
       <h1 className=" slider-heading text-left  pt-10 ">All Packages includes</h1>
       <p className="slider-text text-left md:text-lg text-sm mb-5 text-black"><span className="text-lg font-bold">without any additional costs </span> We provide these offers with our all packages</p>
       <Slider {...settings}>

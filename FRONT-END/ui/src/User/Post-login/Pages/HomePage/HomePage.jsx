@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './HomePage.css';
 import HeroPage from '../../../Components/HeroPage/HeroPage';
-import AutoPlay from './Slider/Slider';
+
 import Header from '../../../../Common/Header/Header';
 import { scubaImage, bgisland } from '../../../../assets/Index';
 import { scubaVideo, scuba2, wa, instagram } from '../../../../assets/Index';
@@ -11,6 +11,8 @@ import Packages from '../packages/Packages';
 import Footer from '../../../../Common/Footer/Footer';
 import Virtual from '../../../Components/Virtual/Virtual';
 import Services from '../../../Components/Services/Services';
+import AutoPlay from './Slider/Slider';
+
 
 const HomePage = () => {
 
@@ -27,7 +29,7 @@ const HomePage = () => {
         <HeroPage />
       </div>
       <div className='mid-container h-full'>
-       <AutoPlay/>
+       {/* <AutoPlay/> */}
        <Services/>
        {/* <Virtual/> */}
        <Packages/>

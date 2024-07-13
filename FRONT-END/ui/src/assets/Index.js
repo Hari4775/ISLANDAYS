@@ -22,10 +22,12 @@ import Line from './icons/Line21.svg'
 import camera from './icons/Camera.png'
 import roundedImage from './icons/Ellipse 794.png'
 import rounded1Image from './icons/Ellipse 793.png'
-import sendImage from './icons/letter_send 1.png'; 
-
-
-
+import sendImage from './icons/letter_send 1.png'
+import experience from './icons/experience.svg'
+import price from './icons/price.svg'
+import secure from './icons/secure.svg'
+import bookmark from "./icons/bookmark.svg"
+import  HOTEL from "./icons/HOTEL.png"
 
 export {
     scubaImage,
@@ -47,7 +49,10 @@ export {
     minicoy,
     map,
     Line,camera,
-    roundedImage,rounded1Image, sendImage
+    roundedImage,rounded1Image, sendImage,
+    price,secure,experience,
+    bookmark,HOTEL
+
 
    
 }
