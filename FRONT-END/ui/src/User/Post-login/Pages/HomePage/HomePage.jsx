@@ -21,7 +21,7 @@ const HomePage = () => {
      
 
       {/* <div className='home-page 'style={{ backgroundImage: `url(${scubaImage})` }} > */}
-      <div className="home-page h-screen ">
+      <div className="home-page h-screen w-full ">
         <video className="video-background" autoPlay loop muted>
           <source src={scuba2} type="video/mp4" />
           Your browser does not support the video tag.

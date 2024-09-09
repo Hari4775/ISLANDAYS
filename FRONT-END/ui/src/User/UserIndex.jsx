@@ -32,13 +32,13 @@ const UserIndex = () => {
         <img src={wa} className="" />
         </a>
       </div>
-    <Header/>
+    {/* <Header/> */}
      <Routes>
       <Route path="/" element={<HomePage/>} />  
       <Route path="/packagedetails/:id" element={<PackageDetails/>}/>
       <Route path='/contact-us' element={<ConnectUs/>}/>
      </Routes>
-    <Footer/>
+    {/* <Footer/> */}
  </div>
 
   )

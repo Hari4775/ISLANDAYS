@@ -1,8 +1,82 @@
+
+.heading{
+  color: #000;
+  font-weight: var(--font-weight, 900);
+  line-height: 36px;
+}
+
+.innner-heading {
+  font-weight: 800;
+  font-style: italic;
+  color: blue;
+  text-align: left;
+}
+.day-plan-heading{
+  color: #4a4a4a;
+  font-weight: bold;
+  text-align: center;
+}
+.place-description{
+  color: black
+}
+.text-button{
+  font-weight: bold;
+  color: #008cff;
+  cursor: pointer;
+}
+.traveller-name{
+  font-size:8px ;
+}
+.time{
+  color:black ;
+  font-weight: bold;
+}
+.date{
+  font-size: 12px;
+}
+.vertical-line {
+  border-left: 2px solid black;
+  height: auto; /* Set height to auto */
+  align-self: stretch; /* Makes the vertical line stretch based on parent container */
+}
+
+.main-container{
+  background-repeat: no-repeat;
+  /* background-image: url(../../../../assets/images/pexels-infonautica-2690765.jpg); */
+}
+
+.policy-Heading{
+  color: #000;
+  font-weight: bolder
+}
+.policy-description{
+  color: red;
+}
+.terms-sub-heading{
+  color: #4a4a4a;
+  font-weight: bold;
+
+}
 .image-container{
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .description-container{
   overflow-y: auto;
 }

@@ -28,6 +28,9 @@ import price from './icons/price.svg'
 import secure from './icons/secure.svg'
 import bookmark from "./icons/bookmark.svg"
 import  HOTEL from "./icons/HOTEL.png"
+import heroImage from "./images/island-days-main.png"
+import flightimage from "./icons/flightimage.png"
+import testBG from "./images/pexels-infonautica-2690765.jpg"
 
 export {
     scubaImage,
@@ -51,7 +54,13 @@ export {
     Line,camera,
     roundedImage,rounded1Image, sendImage,
     price,secure,experience,
-    bookmark,HOTEL
+    bookmark,HOTEL,
+
+    heroImage,
+    flightimage,
+    testBG 
+
+
 
 
    
