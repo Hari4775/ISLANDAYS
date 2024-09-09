@@ -35,4 +35,6 @@ timeStamps:true,
 
 
 
-module.exports= mongoose.model("adminData",adminSchema)
+const Admin = mongoose.model('Admin', adminSchema, 'adminData', 'Admin');
+
+module.exports = Admin;

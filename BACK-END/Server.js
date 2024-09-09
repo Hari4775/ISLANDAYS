@@ -1,19 +1,19 @@
 
 const express = require('express');
-const connectDB = require('./Config/DBconnect');
 const userRouter = require('./Router/UserRouter');
 const errorHandler = require('./Middleware/ErrorHandler');
 const adminRoute = require('./Router/AdminRouter');
 const bodyParser = require('body-parser');
 const fileUploader = require('express-fileupload')
 const cors= require('cors')
+const connectAllDBs = require('./config/dbConnect');
 
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5001;
+connectAllDBs(); 
 app.use(cors())
 
-connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))

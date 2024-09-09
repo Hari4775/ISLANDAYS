@@ -1,13 +1,23 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const DBconnect= async()=>{
-    try{
-        const connect = await mongoose.connect(process.env.DB_URL)
-        console.log("database is connected")
-
-    }catch(error){
-        console.log(error," error")
+const connectDB = async (url, dbName) => {
+    try {
+        await mongoose.connect(url, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            dbName: dbName,
+        });
+        console.log(`${dbName} database is connected`);
+    } catch (error) {
+        console.log(`Error connecting to ${dbName} database:`, error);
     }
-}
+};
 
-module.exports = DBconnect;
+const connectAllDBs = async () => {
+    await connectDB(process.env.DB_URL, 'Main');
+    await connectDB(process.env.ADMIN_DB_URL, 'Admin');
+    await connectDB(process.env.PACKAGE_DB_URL, 'Package');
+    await connectDB(process.env.USER_DB_URL, 'User');
+};
+
+module.exports = connectAllDBs;
