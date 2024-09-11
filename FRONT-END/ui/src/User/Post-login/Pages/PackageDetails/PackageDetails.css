@@ -1,9 +1,28 @@
+.main-heading{
+  color:#ffffff;
+  font-weight: var(--font-weight, 900);
 
+}
 .heading{
-  color: #000;
+  color:#ffffff;
+  /* color: inherit; */
   font-weight: var(--font-weight, 900);
   line-height: 36px;
 }
+.sub-heading{
+  color:#ffffff;
+  font-weight: var(--font-weight, 300);
+  line-height: 36px;
+}
+
+.left-inner-container {
+  /* box-shadow: 10 4px 6px rgba(35, 17, 197, 0.1);
+  border-radius: 8px; 
+  border: 1px solid #615757; 
+  padding: 20px;  */
+ /* background-color: #008cff; */
+}
+
 
 .innner-heading {
   font-weight: 800;
@@ -40,13 +59,21 @@
   align-self: stretch; /* Makes the vertical line stretch based on parent container */
 }
 
-.main-container{
+/* .main-container {
   background-repeat: no-repeat;
-  /* background-image: url(../../../../assets/images/pexels-infonautica-2690765.jpg); */
+  background-color: white;
+  background-image: url(../../../../assets/images/bluebg1.png);
+  background-size: cover; /* Stretch to cover entire screen */
+  /* background-position: center;  */
+/* }  */
+
+.main-container{
+  background-color: #013a63
 }
 
+
 .policy-Heading{
-  color: #000;
+  color:#00b4d8;
   font-weight: bolder
 }
 .policy-description{
