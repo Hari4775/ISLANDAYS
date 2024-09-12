@@ -6,13 +6,14 @@ import { bookmark, camera, flightimage, info } from '../../../../assets/Index';
 import './PackageDetails.css'
 import { Line } from '../../../../assets/Index';
 import thinnakkara from "../../../../assets/images/thinnakkara.jpg"
+import { ticIcon } from '../../../../assets/icons/IconIndex';
 
 
 const PackageDetails = () => {
   const [placeImage, setPlaceImages] = useState(null);
   const [selectedDay, setSelectedDay] = useState(1); 
   const [activeSection, setActiveSection] = useState('itinerary');
-  const [planCategoryScetion,setplanCategorySection] =useState('day');
+  const [planCategorySection,setplanCategorySection] =useState('day');
   const [packageDetailsData, setPackageDetailsData] =useState([])
   const { id } = useParams();
 
@@ -23,6 +24,11 @@ const PackageDetails = () => {
    ? 'border-b-4 border-white font-bold text-red-500'  : 'border-b-2 border-transparent text-white';
  }
 
+ const planCategoryUnderLines =(section) =>{
+  return planCategorySection===section
+   ? 'border-b-4 border-white font-bold text-red-500'  : 'border-b-2 border-transparent text-white';
+ }
+ 
  console.log(packageDetailsData, "packageDetailsData");
 
   useEffect(() => {
@@ -51,7 +57,8 @@ const PackageDetails = () => {
         <p className='sub-heading text-md'>3N Agatti</p>
       </div>
     </div>
-    <div className='image-gallery-container  flex h-56 w-11/12 mx-auto'>
+    <div className='image-gallery-container  flex h-56 w-11/12 mx-auto overflow-x-scroll'>
+ 
   <div className=' w-4/12 mr-2'>
     <img className='h-full w-full' src={thinnakkara} />
   </div>
@@ -75,6 +82,7 @@ const PackageDetails = () => {
       </div>
     </div>
   </div>
+  
 
   <div className='w-4/12 ml-2'>
     <img className='h-full w-full' src={thinnakkara} />
@@ -95,27 +103,36 @@ const PackageDetails = () => {
                  // <div className='left-inner-container w-9/12 bg-slate-100'> 
                 <div className='left-inner-heading-container w-full '>
                   <h1 className='heading mt-2 mb-2'>Here’s a list of Activities & Inclusions in this package for you</h1>
-                  <div className=' inner-dot-ponts w-11/12 mx-auto  mb-12'>
-                       <p className='sub-heading text-sm '>Accommodation & All meals: Breakfast | Lunch | Dinner | Evening Tea or Coffee</p>
-                       <p className='sub-heading text-sm'>Agatti Island Tour</p>
-                       <p className='mb-5 sub-heading text-sm'>Kalpitty Island - Rocky Island Tour</p>
+                  <div className=' inner-dot-ponts  mb-12'>
+                     <div className='flex justify-items-center'>
+                          <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
+                          <p className='sub-heading text-sm '>Accommodation & All meals: Breakfast | Lunch | Dinner | Evening Tea or Coffee</p>
+                      </div>
+                      <div className='flex justify-items-center'>
+                         <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
+                         <p className='sub-heading text-sm'>Agatti Island Tour</p>
+                      </div>
+                      <div className='flex justify-items-center'>
+                         <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
+                         <p className=' sub-heading text-sm'>Kalpitty Island - Rocky Island Tour</p>
+                      </div>
                        {/* <button className='text-blue-500'>View All Inclusions</button> */}
                   </div>
                
 
                 <div className='menu-bar  flex w-full space-x-12 '>
-                      <p  className='my-5 ml-20 heading text-lg'onClick={() => setplanCategorySection('day')}>6 Day Plan</p>
-                      <p  className='my-5 heading text-lg'onClick={() => setplanCategorySection('travel')}>2 Flights</p>
-                      <p  className='my-5 heading text-lg'onClick={() => setplanCategorySection('accomadation')}>2 Hotels </p>
-                      <p  className='my-5 heading text-lg' onClick={() => setplanCategorySection('activy')}>3Activities</p>
-                     <p  className='my-5 heading text-lg' onClick={() => setplanCategorySection('food')}>18 Meals</p>
+                      <p  className={`heading  text-lg my-5 ml-20 ${planCategoryUnderLines('day')} transition-all duration-300 ease-in-out`}onClick={() => setplanCategorySection('day')}>6 Day Plan</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('travel')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('travel')}>2 Flights</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('accomadation')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('accomadation')}>2 Hotels </p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('activity')} transition-all duration-300 ease-in-out`}   onClick={() => setplanCategorySection('activity')}>3Activities</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('food')} transition-all duration-300 ease-in-out`}  onClick={() => setplanCategorySection('food')}>18 Meals</p>
                 </div>
                 <div className='plan-details-container flex w-full  '>
                    <div className='time-line-container w-3/12 '>
                        <h1 className='day-plan-heading mt-5'>Day Plan</h1>
                     </div>
 
-                     {planCategoryScetion==="day"&&(
+                     {planCategorySection==="day"&&(
                      <div className='day-plan-data-container w-9/12 '>
                       {/* common-heading-section */}
                         <div className='each-day-headings flex'>
@@ -221,7 +238,7 @@ const PackageDetails = () => {
                           
                      )}
 
-                     {planCategoryScetion==="travel" && (
+                     {planCategorySection==="travel" && (
                         <div className='day-plan-data-container w-9/12 bg-red-500'>
                             <div className='each-day-headings flex'>
                               <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
@@ -287,7 +304,7 @@ const PackageDetails = () => {
                          </div>       
                      )}
 
-                     {planCategoryScetion==="accomadation" && (
+                     {planCategorySection==="accomadation" && (
                        <div className='day-plan-data-container w-9/12 bg-red-500'>
               <div className='each-day-headings flex '>
                 <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
@@ -323,7 +340,7 @@ const PackageDetails = () => {
                        </div>
                      )}   
 
-                     {planCategoryScetion==="activy" && (
+                     {planCategorySection==="activity" && (
             <div className='day-plan-data-container w-9/12 bg-red-500'>
               <div className='each-day-headings flex '>
                 <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
@@ -347,7 +364,7 @@ const PackageDetails = () => {
             </div>
                       )}   
 
-                      {planCategoryScetion==="food" && (
+                      {planCategorySection==="food" && (
                          <div className='day-plan-data-container w-9/12 bg-red-500'>
                 <div className='each-day-headings flex '>
                    <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
@@ -376,8 +393,8 @@ const PackageDetails = () => {
 
              {activeSection === 'policy' && (
     
-        <div className='w-9/12 bg-slate-500 '>
-         <div className='policies-data mb-2   bg-slate-300'>
+        <div className='w-full '>
+         <div className='policies-data mb-2  '>
           <div className='ml-10'>
            <h1 className='policy-Heading lg:text-2xl text-lg mb-2 mt-5'>Cancellation & Date Change</h1>
             <p className='policy-description mb-7'>Cancellation not possible after booking</p>
@@ -389,7 +406,7 @@ const PackageDetails = () => {
            <p className='policy-description mb-7'>Cancellation not possible after booking</p>
           </div>
          </div>
-         <div className='terms-and-conditions bg-slate-300'>
+         <div className='terms-and-conditions '>
            <h1 className='policy-Heading lg:text-2xl text-lg mb-5 mt-5 ml-10'>Terms and Conditions</h1>
            <div className='important-info-container'>
               <h3 className='terms-sub-heading text-md mb-3'>Important Information</h3>
@@ -432,7 +449,7 @@ const PackageDetails = () => {
              )}
 
              {activeSection === 'summary' && (    
-        <div className='w-9/12 bg-slate-500 '>
+        <div className='w-full bg-slate-500 '>
            <p className='text-sm'> Arrival in Lakshadweep by IndiGo Flight 6E-2069, 6E-7271 | Departing on 01 Oct, 05:45 AM | Arriving on 01 Oct, 01:00 PM | Includes Check In Baggage</p>
            <div className='w-11/12  flex bg-red-500'>
              <div className='w-2/12  '>
@@ -447,20 +464,21 @@ const PackageDetails = () => {
              )}
       </div>
     
-      <div className='left-inner-container bg-orange-500 w-3/12 ml-20 '> 
-            <div className='payment-section bg-slate-300'>
-                 <div className='flex w-11/12 mb-3 mx-auto pt-5'>
-                   <h1 className='text-3xl font-extrabold '>₹1,11,998</h1>
-                   <p className='text-md'>/Adult</p>
-                 </div>
-                 <p className='text-md mb-3 ml-3'>Excluding applicable taxes</p>
-                 <div className='pb-5 '>
-                    <div className='w-10/12 mx-auto bg-blue-500 rounded-lg  '>
-                    <p className='text-center'>PROCEED TO PAYMENT</p>
-                  </div>
-                </div>
-           </div>
+      <div className='left-inner-container w-3/12 ml-10 '> 
+    <div className='payment-section bg-slate-400 shadow-lg rounded-lg shadow-blue-400'>
+        <div className='flex w-11/12 mb-3 mx-auto pt-5'>
+            <h1 className='text-5xl font-extrabold '>₹1,11,998</h1>
+            <p className='text-md'>/Adult</p>
         </div>
+        <p className='text-md mb-3 ml-3'>Excluding applicable taxes</p>
+        <div className='pb-5 '>
+            <div className='w-10/12 mx-auto bg-blue-500 rounded-lg'>
+                <p className='text-center'>PROCEED TO PAYMENT</p>
+            </div>
+        </div>
+    </div>
+ </div>
+
     </div>
      </div>
       {/* <div className='w-5/12  fixed left-4 top-32 lg:top-24  image-container  '>
