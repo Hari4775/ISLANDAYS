@@ -12,9 +12,10 @@ import { ticIcon } from '../../../../assets/icons/IconIndex';
 const PackageDetails = () => {
   const [placeImage, setPlaceImages] = useState(null);
   const [selectedDay, setSelectedDay] = useState(1); 
-  const [activeSection, setActiveSection] = useState('itinerary');
+  const [activeSection, setActiveSection] = useState('trip_Plan');
   const [planCategorySection,setplanCategorySection] =useState('day');
   const [packageDetailsData, setPackageDetailsData] =useState([])
+  const [dayPlan,setDayPlan] =useState([])
   const { id } = useParams();
 
  
@@ -29,19 +30,74 @@ const PackageDetails = () => {
    ? 'border-b-4 border-white font-bold text-red-500'  : 'border-b-2 border-transparent text-white';
  }
  
- console.log(packageDetailsData, "packageDetailsData");
+ console.log(packageDetailsData, "dayplan");
 
   useEffect(() => {
     const selectedPackage = PackageDetail.find((pkg) => pkg.id === id);
     if (selectedPackage) {
       setPackageDetailsData(selectedPackage);
-    } else {
+    }
+     else {
       console.log("Package not found");
     }
   }, [id]); 
   
+useEffect(()=>{
+ if(packageDetailsData?.trip_Plan?.plan){
+  setDayPlan(packageDetailsData?.trip_Plan?.plan)
+ }
+ else{
+  console.log("no data plan")
+ }
+},[packageDetailsData])
 
-  console.log(packageDetailsData, "packageDetailsData");
+
+const calkulateTotals =()=>{
+  let totalDays = dayPlan.length;
+  let totalActivities = 0;
+  let totalFlights = 0;
+  let totalFood = 0;
+  let totalAccommodations = 0;
+
+  dayPlan.forEach(day => {
+    // Count activities
+    if (Array.isArray(day.activity)) {
+      totalActivities += day.activity.length;
+    } else if (day.activity) {
+      totalActivities += 1;
+    }
+
+    // Count flights
+    if (Array.isArray(day.travel)) {
+      totalFlights += day.travel.filter(t => t.mode === 'Flight').length;
+    } else if (day?.travel?.mode === 'Flight') {
+      totalFlights += 1;
+    }
+
+    // Count food
+    if (day?.food) {
+      totalFood += day.food.length;
+    }
+
+    // Count accommodations
+    if (day?.accommodation) {
+      totalAccommodations += 1;
+    }
+  });
+
+  return {
+    totalDays,
+    totalActivities,
+    totalFlights,
+    totalFood,
+    totalAccommodations
+  };
+};
+
+
+
+
+const totals =calkulateTotals ()
   return (
   <div className=" w-full mx-auto    main-container " >
     <div className='main-Heading-container mb-4 w-11/12 mx-auto pt-10'>
@@ -50,11 +106,7 @@ const PackageDetails = () => {
         <div className='custamizable-box flex'>
           <p className='sub-heading text-md'>Custamizable</p>
         </div>
-        <div className='day-box'>
-          <p className='sub-heading text-md'>3N/4D</p>
-        </div>
-        <p className='sub-heading text-md'>2N Kavaratti</p>
-        <p className='sub-heading text-md'>3N Agatti</p>
+        <p className='sub-heading text-md'>{packageDetailsData?.subtitle}</p>
       </div>
     </div>
     <div className='image-gallery-container  flex h-56 w-11/12 mx-auto overflow-x-scroll'>
@@ -90,7 +142,7 @@ const PackageDetails = () => {
 </div>
 
     <div className='heading-bar-container w-11/12 mx-auto flex my-5 space-x-5'>
-        <h1 className={`heading ${activeSectionUnderLines('itinerary')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('itinerary')}>ITINERARY</h1>
+        <h1 className={`heading ${activeSectionUnderLines('trip_Plan')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('trip_Plan')}>TRIP PLAN</h1>
         <h1 className={`heading ${activeSectionUnderLines('policy')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('policy')}>POLICY</h1>
         <h1 className={`heading ${activeSectionUnderLines('summary')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('summary')}>SUMMARY</h1>
 
@@ -99,67 +151,80 @@ const PackageDetails = () => {
       <div className='second-inner-container flex bg-yellow w-11/12 mx-auto pt-5 '>
       <div className='left-inner-container w-9/12 '> 
 
-           {activeSection === 'itinerary' && (
+         {activeSection === 'trip_Plan' && (
                  // <div className='left-inner-container w-9/12 bg-slate-100'> 
-                <div className='left-inner-heading-container w-full '>
+            <div className='left-inner-heading-container w-full '>
                   <h1 className='heading mt-2 mb-2'>Here’s a list of Activities & Inclusions in this package for you</h1>
                   <div className=' inner-dot-ponts  mb-12'>
-                     <div className='flex justify-items-center'>
+                    {packageDetailsData?.trip_Plan?.points.map((items,index)=>(
+
+                     <div key={index}  className='flex justify-items-center'>
                           <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
-                          <p className='sub-heading text-sm '>Accommodation & All meals: Breakfast | Lunch | Dinner | Evening Tea or Coffee</p>
+                          <p className='sub-heading text-sm '>{items}</p>
                       </div>
-                      <div className='flex justify-items-center'>
-                         <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
-                         <p className='sub-heading text-sm'>Agatti Island Tour</p>
-                      </div>
-                      <div className='flex justify-items-center'>
-                         <img className='mr-1 w-5 h-5 my-auto' src={ticIcon}/>
-                         <p className=' sub-heading text-sm'>Kalpitty Island - Rocky Island Tour</p>
-                      </div>
-                       {/* <button className='text-blue-500'>View All Inclusions</button> */}
+                       ))}
                   </div>
                
 
-                <div className='menu-bar  flex w-full space-x-12 '>
-                      <p  className={`heading  text-lg my-5 ml-20 ${planCategoryUnderLines('day')} transition-all duration-300 ease-in-out`}onClick={() => setplanCategorySection('day')}>6 Day Plan</p>
-                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('travel')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('travel')}>2 Flights</p>
-                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('accomadation')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('accomadation')}>2 Hotels </p>
-                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('activity')} transition-all duration-300 ease-in-out`}   onClick={() => setplanCategorySection('activity')}>3Activities</p>
-                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('food')} transition-all duration-300 ease-in-out`}  onClick={() => setplanCategorySection('food')}>18 Meals</p>
+                <div className='menu-bar  flex w-full space-x-12 bg-red-400'>
+                      <p  className={`heading  text-lg my-5 ml-20 ${planCategoryUnderLines('day')} transition-all duration-300 ease-in-out`}onClick={() => setplanCategorySection('day')}>{totals.totalDays} Days Plan</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('travel')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('travel')}>{totals.totalFlights} Flights</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('accomadation')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('accomadation')}> {totals.totalAccommodations} Hotels </p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('activity')} transition-all duration-300 ease-in-out`}   onClick={() => setplanCategorySection('activity')}> {totals.totalActivities} Activitys</p>
+                      <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('food')} transition-all duration-300 ease-in-out`}  onClick={() => setplanCategorySection('food')}>{totals.totalFood} Meals</p>
                 </div>
-                <div className='plan-details-container flex w-full  '>
+
+                {/* plan-detail-container start */}
+                <div className='plan-details-container flex w-full   '>
                    <div className='time-line-container w-3/12 '>
                        <h1 className='day-plan-heading mt-5'>Day Plan</h1>
                     </div>
 
-                     {planCategorySection==="day"&&(
-                     <div className='day-plan-data-container w-9/12 '>
+                     {planCategorySection==="day"&&(            
+                    <div className='day-plan-data-container w-9/12 '>
                       {/* common-heading-section */}
+                      {dayPlan.map((planItem,index)=>(
+
+                      <div key={index}>
+                     
                         <div className='each-day-headings flex'>
-                            <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
-                            <p className='ml-5 my-5 '>Arrival at Agatti Airport </p>
-                            <p className='ml-4 my-5 '>included:</p>
-                            <p className='my-5 ml-2 '>!Flight</p>
-                            <p className='my-5 ml-2'>1 hotel</p>
-                            <p className='my-5 ml-2'>2 Meals</p>
+                            <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day {planItem?.day}</button>
+                            <p className='ml-5 my-5 sub-heading'>{planItem?.day_Heading} </p>
+                            <p className='ml-4 my-5 sub-heading'>included:</p>
+                            <p className='my-5 ml-3 sub-heading'>{planItem?.travel?.length} Flight</p>
+                            <p className='my-5 ml-3 sub-heading'>{planItem?.accommodation?.length} Hotel</p>
+                            <p className='my-5 ml-3 sub-heading'>{planItem?.activity?.length} Activitys</p>
+                            <p className='my-5 ml-3 sub-heading'>{planItem?.food?.length} meals</p>
                          </div>
 
                          {/* package description section */}
-                        <div className='place-details-section w-11/12 mx-auto'>
-                            <p className='place-description text-xs mb-5'>Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.</p>
-                            <div className='flex place-image-container mb-12 '>
-                                <div className='w-1/2 rounded-lg bg-blue-500 mx-2 h-32'>sd</div>
-                                <div className='w-1/2 rounded-lg bg-orange-400 mx-2'>sd</div>
+                        <div className='place-details-section  mx-auto'>
+                            <p className=' text-xs mb-5 sub-heading'>{planItem?.description}</p>
+                            
+
+                       
+                            <div className='flex place-image-container mb-12 h-48 overflow-x-hidden'>
+                            {planItem?.images?.map((item,index)=>(
+                                <div key={index} className='w-1/2 rounded-lg bg-blue-500 mx-2 '>
+                                 <img src={item}/>
+                                </div>
+                             ))}
+                                {/* <div className='w-1/2 rounded-lg bg-orange-400 mx-2'>sd</div> */}
                             </div>
                         </div>
 
                             {/* travel section */}
                         <div className='travel-section'>
+                        {planItem?.travel?.map((travelItem,travelIndex)=>(
+
+                         
+                        <div key={travelIndex} className=''>
                           <div className='travel-heading flex'>
                               <div className='w-8/12 space-x-2 flex ml-5'>
-                                  <h1 className=''>FLIGHT</h1>
-                                  <p className=''>New Delhi to Lakshadweep</p>
-                                  <h1 className=''>07h 15 m</h1>
+                                  <h1 className='sub-heading'>{travelItem?.mode}</h1>
+                                  <p className='sub-heading'>{travelItem?.from}</p>
+                                  <p className='sub-heading'>{travelItem?.to}</p>
+                                  <h1 className='sub-heading'>{travelItem?.duration}</h1>
                               </div>
                               <div className='w-4/12 ml-auto flex'>
                                   <p className='text-button'>Remove</p>
@@ -167,201 +232,230 @@ const PackageDetails = () => {
                                   <p className='text-button'>Change</p>
                               </div>
                           </div>
-                          <div className='travel-data-contaier mb-10'>
+                          {Array.isArray(travelItem?.flight) && travelItem.flight.map((flightItem, flightIndex) => (
+                          <div key={flightIndex} className='travel-data-contaier mb-10'>
+
                             <div className='flex w-10/12 mx-auto'>
                                 <div className='travel-image-section mt-5'>
                                     <img className='mb-2' src={flightimage}/>
-                                    <p className='traveller-name'>6E-2069</p> 
+                                    <p className='traveller-name'>{flightItem?.number}</p> 
                                 </div>
                                 <div className='travel-time-container mt-5 ml-5'>
-                                    <h1 className='time mb-2'>05:45</h1>
-                                    <p className='date'>Tue, 01 oct</p>
-                                    <p className='date'>New Delhi</p>
+                                    <h1 className='time mb-2'>{flightItem?.start_time}</h1>
+                                    <p className='date'>{flightItem?.start_date}</p>
+                                    <p className='date'>{flightItem?.from}</p>
                                 </div>   
                                 <div className='w-1/12 ml-5'></div> 
                                 <div className='travel-time-container mt-5 ml-5'>
-                                   <h1 className='time mb-2'>08:30</h1>
-                                   <p className='date'>Tue, 01 oct</p>
-                                   <p className='date'>New Delhi</p>
+                                   <h1 className='time mb-2'>{flightItem?.reach_timee}</h1>
+                                   <p className='date'>{flightItem?.reach_date}</p>
+                                   <p className='date'>{flightItem?.to}</p>
                                 </div>  
                                 <div className='verticle-line'></div>  
 
                                 <div className='ml-auto travel-cabin-container mt-5'>
-                                    <p className='text-xs mb-3'>Cabin :7 Kgs (1 piece only)</p>   
-                                    <p className='text-xs'>Cabin :7 Kgs (1 piece only)</p>     
+                                    <p className='text-xs mb-3'>{flightItem?.weight}</p>   
                                 </div>     
                             </div>
-                          </div>
 
-                          <div className='travel-data-contaier mb-10'>
-                            <div className='flex w-10/12 mx-auto'>
-                                <div className='travel-image-section mt-5'>
-                                    <img className='mb-2' src={flightimage}/>
-                                    <p className='traveller-name'>6E-2069</p> 
-                                </div>
-                                <div className='travel-time-container mt-5 ml-5'>
-                                    <h1 className='time mb-2'>05:45</h1>
-                                    <p className='date'>Tue, 01 oct</p>
-                                    <p className='date'>New Delhi</p>
-                                </div>   
-                                <div className='w-1/12 ml-5'></div> 
-                                <div className='travel-time-container mt-5 ml-5'>
-                                   <h1 className='time mb-2'>08:30</h1>
-                                   <p className='date'>Tue, 01 oct</p>
-                                   <p className='date'>New Delhi</p>
-                                </div>  
-                                <div className='verticle-line'></div>  
-
-                                <div className='ml-auto travel-cabin-container mt-5'>
-                                    <p className='text-xs mb-3'>Cabin :7 Kgs (1 piece only)</p>   
-                                    <p className='text-xs'>Cabin :7 Kgs (1 piece only)</p>     
-                                </div>     
-                            </div>
                           </div>
-                    
+                          ))}
+                          
+                       
+                        </div>
+                        ))}
+
                         </div>
 
+
                           {/* accomadation section */}
-                        <div className='accomodation-image-container flex mb-10'>
-                              <div className='w-5/12 bg-green-400 h-48'>d</div>
-                              <div className='w-7/12 bg-yellow-400 ml-auto'>
-                                   <h1 className='resort-name font-bold mb-3'>Dweep Mahal - Holidays Collections(Or Similar)</h1> 
-                                   <p className='mb-2'>*****</p>
-                                   <p className='mb-2'>Kavarati</p>
+                          {Array.isArray(planItem.accommodation) && planItem.accommodation.map((accomadationItem,accomadationIndex) => (  
+                        <div key={accomadationIndex} className='accomodation-image-container flex mb-10'>
+                              <div className='w-6/12 '>
+                                <img className='h-56 w-full' src={accomadationItem?.hotel_image}/>
+                              </div>
+                              <div className='w-6/12  ml-auto'>
+                                   <h1 className=' sub-heading ml-10 font-bold mb-3'>{accomadationItem?.hotel_name}</h1> 
+                                   <p className='mb-2  sub-heading ml-10'>{accomadationItem?.stars}</p>
+                                   <p className='mb-2 sub-heading ml-10'>{accomadationItem?.location}</p>
                                    <div className='flex'>
-                                       <p>1 October - 3 October, 2 Nights</p>
+                                       <p className=' sub-heading ml-10'>{accomadationItem?.booking_date}</p>
                                    </div> 
                                </div> 
-
                          </div>
-               </div>
-                          
-                     )}
 
-                     {planCategorySection==="travel" && (
-                        <div className='day-plan-data-container w-9/12 bg-red-500'>
-                            <div className='each-day-headings flex'>
-                              <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
-                              <p className='ml-5 my-5 '>Arrival at Agatti Airport </p>
-                              <p className='ml-4 my-5 '>included:</p>
-                              <p className='my-5 ml-2 '>!Flight</p>
-                              <p className='my-5 ml-2'>1 hotel</p>
-                              <p className='my-5 ml-2'>2 Meals</p>
-                            </div>
-                            <div className='travel-data-contaier mb-10 w-full bg-green-400'>
-                                 <div className='flex w-10/12 mx-auto'>
-                                    <div className='travel-image-section mt-5'>
-                                        <img className='mb-2' src={flightimage}/>
-                                        <p className='traveller-name'>6E-2069</p> 
-                                    </div>
-                                    <div className='time-container mt-5 ml-5'>
-                                       <h1 className='time mb-2'>05:45</h1>
-                                       <p className='date'>Tue, 01 oct</p>
-                                       <p className='date'>New Delhi</p>
-                                    </div>    
-                                    <div className='w-1/12 ml-5'></div> 
+                        ))}
 
-                                    <div className='time-container mt-5 ml-5'>
-                                         <h1 className='time mb-2'>08:30</h1>
-                                         <p className='date'>Tue, 01 oct</p>
-                                         <p className='date'>New Delhi</p>
-                                    </div>  
+                        {/* activity section */}
+                        {Array.isArray(planItem.activity) && planItem.activity.map((activityItem,activityIndex)=>(
 
-                                    <div className='verticle-line'></div>  
-
-                                    <div className='ml-auto  mt-5'>
-                                       <p className='text-xs mb-3'>Cabin :7 Kgs (1 piece only)</p>   
-                                       <p className='text-xs'>Cabin :7 Kgs (1 piece only)</p>     
-                                    </div>     
+                        <div key={activityIndex} >
+                               <div className='activity-container flex mb-10'>
+                                       <div className='w-5/12 bg-green-400 h-48'>
+                                        <img src={activityItem?.images}/>
+                                       </div>
+                                       <div className='w-7/12  ml-auto'>
+                                            <h1 className='resort-name font-bold mb-3'>{activityItem?.name}</h1> 
+                                             <p className='mb-2 text-xs'>{activityItem?.description}</p>
+                                             <div className='flex'>
+                                                  <p>Duration 1 Hour</p>
+                                                  <p>Afternoon</p>
+                                             </div> 
+                                       </div> 
                                  </div>
+                         </div>
+                        ))}
 
-                                 <div className='flex w-10/12 mx-auto'>
-                                    <div className='travel-image-section mt-5'>
-                                        <img className='mb-2' src={flightimage}/>
-                                        <p className='traveller-name'>6E-2069</p> 
-                                    </div>
-                                    <div className='time-container mt-5 ml-5'>
-                                       <h1 className='time mb-2'>05:45</h1>
-                                       <p className='date'>Tue, 01 oct</p>
-                                       <p className='date'>New Delhi</p>
-                                    </div>    
-                                    <div className='w-1/12 ml-5'></div> 
 
-                                    <div className='time-container mt-5 ml-5'>
-                                         <h1 className='time mb-2'>08:30</h1>
-                                         <p className='date'>Tue, 01 oct</p>
-                                         <p className='date'>New Delhi</p>
-                                    </div>  
 
-                                    <div className='verticle-line'></div>  
 
-                                    <div className='ml-auto  mt-5'>
-                                       <p className='text-xs mb-3'>Cabin :7 Kgs (1 piece only)</p>   
-                                       <p className='text-xs'>Cabin :7 Kgs (1 piece only)</p>     
-                                    </div>     
-                                 </div>  
-                            </div>   
-                         </div>       
+                      </div>
+                      ))}
+                    </div>         
                      )}
+
+            
+                     {planCategorySection === "travel" && (
+                         <div className='day-plan-data-container w-9/12'>
+                            {dayPlan.map((planItem, index) => (
+                                 <div key={index}>
+                                      <div className='each-day-headings flex'>
+                                           <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'> Day {planItem?.day}
+                                           </button>
+                                           <p className='ml-5 my-5'>{planItem?.day_Heading}</p>
+                                           <p className='ml-4 my-5'>Included:</p>
+                                           <p className='my-5 ml-2'>{planItem?.travel?.length} Flight</p>
+                                           <p className='my-5 ml-2'>{planItem?.accommodation?.length} Hotel</p>
+                                           <p className='my-5 ml-2'>{planItem?.food?.length} Meals</p>
+                                       </div>
+
+                                       {/* Travel section */}
+                                        {planItem?.travel?.map((travelItem, travelIndex) => (
+                                        <div key={travelIndex} className='travel-data-contaier my-10 w-full'>
+                                          <div className='travel-heading flex'>
+                                              <div className='w-8/12 space-x-2 flex ml-5'>
+                                                   <h1 className='sub-heading'>{travelItem?.mode}</h1>
+                                                   <p className='sub-heading'>{travelItem?.from}</p>
+                                                   <p className='sub-heading'>{travelItem?.to}</p>
+                                                   <h1 className='sub-heading'>{travelItem?.duration}</h1>
+                                               </div>
+                                               <div className='w-4/12 ml-auto flex'>
+                                                    <p className='text-button'>Remove</p>
+                                                    <p>|</p>
+                                                    <p className='text-button'>Change</p>
+                                               </div>
+                                           </div>
+
+                                              {travelItem.flight.map((flightItem, flightIndex) => (
+                                               <div className='flex w-10/12 mx-auto'>
+                                                    <div className='travel-image-section mt-5'>
+                                                        <img className='mb-2' src={flightimage} />
+                                                        <p className='traveller-name'>{flightItem?.number}</p>
+                                                     </div>
+                                                    <div className='time-container mt-5 ml-5'>
+                                                         <h1 className='time mb-2'>{flightItem?.start_time}</h1>
+                                                         <p className='date'>{flightItem?.start_date}</p>
+                                                         <p className='date'>{flightItem?.from}</p>
+                                                     </div>
+                                                     <div className='w-1/12 ml-5'></div> 
+                                                     <div className='time-container mt-5 ml-5'>
+                                                           <h1 className='time mb-2'>{flightItem?.reach_time}</h1>
+                                                           <p className='date'>{flightItem?.reach_date}</p>
+                                                           <p className='date'>{flightItem?.to}</p>
+                                                     </div>
+                                                     <div className='verticle-line'></div>  
+                                                     
+                                                     <div className='ml-auto travel-cabin-container mt-5'>
+                                                        <p className='text-xs mb-3'>{flightItem?.weight}</p>   
+                                                     </div>   
+                                               </div>
+                                              ))}
+                                         </div>
+                                        ))}
+                                   </div>
+                               ))}
+                         </div>
+                         )}
+
 
                      {planCategorySection==="accomadation" && (
-                       <div className='day-plan-data-container w-9/12 bg-red-500'>
-              <div className='each-day-headings flex '>
-                <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
-                <p className='ml-5 my-5 '>Arrival at Agatti Airport </p>
-                <p className='ml-4 my-5 '>included:</p>
-                <p className='my-5 ml-2 '>!Flight</p>
-                <p className='my-5 ml-2'>1 hotel</p>
-                <p className='my-5 ml-2'>2 Meals</p>
-              </div>
-              <div className='accomadation-container w-full bg-red-600 '>
-                  <div className='accomodation-data-container w-11/12 mx-auto'>
-                    <div className='accomodation-heading flex space-x-4 ml-5 py-5'>
-                        <h1>RESORT</h1>
-                        <h1>2Nights</h1>
-                        <h1>In Kavarathy</h1>
-                    </div>
-                    <div className='accomodation-image-container flex mb-10'>
+                      <div className='day-plan-data-container w-9/12 '>
+                      {dayPlan.map((planItem, index) => (
+                      <div key={index}>
+                            <div className='each-day-headings flex'>
+                                 <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'> Day {planItem?.day}</button>
+                                    <p className='ml-5 my-5'>{planItem?.day_Heading}</p>
+                                    <p className='ml-4 my-5'>Included:</p>
+                                    <p className='my-5 ml-2'>{planItem?.travel?.length} Flight</p>
+                                    <p className='my-5 ml-2'>{planItem?.accommodation?.length} Hotel</p>
+                                    <p className='my-5 ml-2'>{planItem?.food?.length} Meals</p>
+                              </div>
+                             {planItem?.accommodation.map((accommodationItem, accommodationIndex)=>(
 
-                      <div className='w-5/12 bg-green-400 h-48'>d</div>
-                      <div className='w-7/12 bg-yellow-400 ml-auto'>
-                        <h1 className='resort-name font-bold mb-3'>Dweep Mahal - Holidays Collections
-                        (Or Similar)</h1> 
-                        <p className='mb-2'>*****</p>
-                        <p className='mb-2'>Kavarati</p>
-                        <div className='flex'>
-                           <p>1 October - 3 October, 2 Nights</p>
-                        </div> 
+                             
+                             <div key={accommodationIndex} className='accomadation-container w-full  '>
+                                  <div className='accomodation-data-container w-11/12 mx-auto'>
+                                       <div className='accomodation-heading flex space-x-4 ml-5 py-5'>
+                                            <h1>{accommodationItem?.hotel_name}</h1>
+                                            <h1>{accommodationItem?.duration}</h1>
+                                            <h1>{accommodationItem?.location}</h1>
+                                       </div>
+                                      <div className='accomodation-image-container flex mb-10'>
+                                           <div className='w-5/12  h-48'>
+                                             <img className='w-full h-48' src={accommodationItem?.hotel_image}/>
+                                           </div>
+                                           <div className='w-7/12  ml-auto'>
+                                               <h1 className='resort-name font-bold mb-3'>{accommodationItem?.hotel_name}</h1> 
+                                               <p className='mb-2'>{accommodationItem?.rating}</p>
+                                               <p className='mb-2'>{accommodationItem?.location}</p>
+                                               <div className='flex'>
+                                                   <p>{accommodationItem?.booking_date}</p>
+                                               </div> 
+                                           </div> 
+                                       </div>
+                                   </div>
+                               </div>
 
-                      </div> 
-                    </div>
-                  </div>
-              </div>
+                            ))}
+                        </div>
+                      ))}
                        </div>
                      )}   
 
                      {planCategorySection==="activity" && (
-            <div className='day-plan-data-container w-9/12 bg-red-500'>
-              <div className='each-day-headings flex '>
-                <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
-                <p className='ml-5 my-5 '>Arrival at Agatti Airport </p>
-                <p className='ml-4 my-5 '>included:</p>
-                <p className='my-5 ml-2 '>!Flight</p>
-                <p className='my-5 ml-2'>1 hotel</p>
-                <p className='my-5 ml-2'>2 Meals</p>
-              </div>
-              <div className='activity-container flex mb-10'>
-                  <div className='w-5/12 bg-green-400 h-48'>d</div>
-                  <div className='w-7/12 bg-yellow-400 ml-auto'>
-                    <h1 className='resort-name font-bold mb-3'>Agatti Island DiscoveryTour</h1> 
-                    <p className='mb-2 text-xs'>Embark on an enchanting journey with our "Agatti Island Odyssey" a guided tour that unveils the hidden treasures of Agatti. Immerse yourself in the rich history and natural beauty as you explore key landmarks such as the Agatti Museum, Eas Read More...</p>
-                    <div className='flex'>
-                      <p>Duration 1 Hour</p>
-                      <p>Afternoon</p>
-                    </div> 
-                  </div> 
-               </div>
-            </div>
+                         <div className='day-plan-data-container w-9/12 '>
+                          {dayPlan.map((planItem, index) => (
+                            <div key={index}>
+                               <div className='each-day-headings flex'>
+                                 <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'> Day {planItem?.day}</button>
+                                    <p className='ml-5 my-5'>{planItem?.day_Heading}</p>
+                                    <p className='ml-4 my-5'>Included:</p>
+                                    <p className='my-5 ml-2'>{planItem?.travel?.length} Flight</p>
+                                    <p className='my-5 ml-2'>{planItem?.accommodation?.length} Hotel</p>
+                                    <p className='my-5 ml-2'>{planItem?.food?.length} Meals</p>
+                                </div>
+
+                                {planItem?.activity.map((activityItem,activityIndex)=>(
+                                  <div key={activityIndex} className='activity-container flex mb-10'>
+                                    <div className='w-5/12 bg-green-400 h-48'>
+
+                                      <img src={activityItem?.imges}/>
+                                    </div>
+                                    <div className='w-7/12  ml-auto'>
+                                         <h1 className='resort-name font-bold mb-3'>{activityItem?.name}</h1> 
+                                         <p className='mb-2 text-xs'>{activityItem?.description}</p>
+                                         <div className='flex'>
+                                              <p>{activityItem?.duration}</p>
+                                              <p>{activityItem?.time}</p>
+                                          </div> 
+                                     </div> 
+                                </div>
+
+                                ))}
+                                
+                          </div>
+                          ))}
+                           </div>
                       )}   
 
                       {planCategorySection==="food" && (
@@ -384,12 +478,13 @@ const PackageDetails = () => {
                </div>
                          </div>
                        )}
-                   </div> 
+                </div> 
+                {/* plan detail container end */}
 
 
 
-               </div>
-            )}
+           </div>
+        )}
 
              {activeSection === 'policy' && (
     

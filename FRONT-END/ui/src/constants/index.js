@@ -33,100 +33,190 @@ export const PackageDetail = [
   {
     id: "couple",
     title: "Couple Package",
-    subtitle:"3-Night/4-Day  2-Night in kavaratti   3-Night in Agatti",
-    image:[honeymoon,honeymoon,honeymoon,honeymoon],
-    itinerary:
-      {
-        points:[
-      "Accommodation & All meals: Breakfast | Lunch | Dinner | Evening Tea or Coffee",
-      "Agatti Island Tour", "Kalpitty Island - Rocky Island Tour"
-        ],
-        dayPlan:[
+    subtitle: "3-Night/4-Day 2-Night in Kavaratti 3-Night in Agatti",
+    image: [honeymoon, honeymoon, honeymoon, honeymoon],
+    trip_Plan: {
+      points: [
+        "Accommodation & All meals: Breakfast | Lunch | Dinner | Evening Tea or Coffee",
+        "Agatti Island Tour",
+        "Kalpitty Island - Rocky Island Tour"
+      ],
+     plan:[
+        {
+          day: 1,
+          day_Heading:"Arrival at Agatti Airport",
+          description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
+         images:[honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon],
+          travel: [
             {
-              day:1,
-              arrival:" Agatti Airport",
-              flight_Count:1,
-              hotel_Count:1,
-              meal_Count:1,
-              description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
-              images:[honeymoon,honeymoon],
+              mode: "Flight",
+              from: "Kerala",
+              to: "Lakshadweep",
+              duration: "07h 15m",
+              flight:[ 
+                {
+                number: "6E-2069",
+                from: "New Delhi",
+                to: "Lakshadweep",
+                duration: "07h 15m",
+                start_time: "05:45",
+                start_date: "Tue, 01 Oct",
+                reach_time: "09:45",
+                reach_date: "Tue, 01 Oct",
+                weight: "7 Kgs (1 piece only)"
+              },
+              {
 
-              flight_From:"Kerala",
-              flight_To:"Lak",
-              flight_duration:"07h 15 m",
-              flight_number:"6E-2069",
-              flight_start_time:"05:45",
-              flight_start_date:"Tue, 01 oct",             
-              flight_reach_time:"09:45",
-              flight_reach_date:"Tue, 04 oct",
-              weight:"7 Kgs (1 piece only)",
-
-              hotel_name:"Dweep Mahal - Holidays Collections",
-              hotel_image:honeymoon,
-              hotel_star:"****",
-              hotel_location:"kavaratti",
-              hotel_booking_date:"1 October - 3 October, 2 Nights"
+                number: "6E-20644",
+                from: "goa",
+                to: "Lakshadweep",
+                duration: "02h 15m",
+                start_time: "05:45",
+                start_date: "Tue, 01 Oct",
+                reach_time: "09:45",
+                reach_date: "Tue, 01 Oct",
+                weight: "7 Kgs (1 piece only)"
+              }
+            ]
             },
-          {
-            
-            day:1,
-            arrival:" Agatti Airport",
-            flight_Count:1,
-            hotel_Count:1,
-            meal_Count:1,
-            description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
-            images:[honeymoon,honeymoon],
+          
+          
+          ],
+          accommodation:[
+           
+             {
+            type:"resort",
+            hotel_name: "Dweep Mahal - Holidays Collections",
+            hotel_image: honeymoon,
+            rating: "****",
+            location: "Kavaratti",
+            booking_date: "1 October - 3 October",
+            duration:"2 Night 1 day"
+          }
+        ],
 
-            flight_From:"Kerala",
-            flight_To:"Lak",
-            flight_duration:"07h 15 m",
-            flight_number:"6E-2069",
-            flight_start_time:"05:45",
-            flight_start_date:"Tue, 01 oct",             
-            flight_reach_time:"09:45",
-            flight_reach_date:"Tue, 04 oct",
-            weight:"7 Kgs (1 piece only)",
+          activity:[ 
+            {
+              name: "Beach Relaxation",
+              description: "Spend the evening relaxing on the serene beaches of Kavaratti Island.",
+              images: [honeymoon, honeymoon],
+              duration:"2 hours",
+              time:"afternoon"
+            },
+            {
+              name: "Welcome Drink & Hotel Briefing",
+              description: "Receive a warm welcome with a refreshing drink at the hotel, followed by a briefing on the facilities.",
+              duration:"4 hours",
+              time:"morning"
 
-            hotel_name:"Dweep Mahal - Holidays Collections",
-            hotel_image:honeymoon,
-            hotel_star:"****",
-            hotel_location:"kavaratti",
-            hotel_booking_date:"1 October - 3 October, 2 Nights"
+            }
+          ],
 
-          },
-          {
-            day:1,
-            arrival:" Agatti Airport",
-            flight_Count:1,
-            hotel_Count:1,
-            meal_Count:1,
-            description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
-            images:[honeymoon,honeymoon],
+          food:  ["breakfast", "lunch", "dinner- biriyani"]
+          
+        },
 
-            flight_From:"Kerala",
-            flight_To:"Lak",
-            flight_duration:"07h 15 m",
-            flight_number:"6E-2069",
-            flight_start_time:"05:45",
-            flight_start_date:"Tue, 01 oct",             
-            flight_reach_time:"09:45",
-            flight_reach_date:"Tue, 04 oct",
-            weight:"7 Kgs (1 piece only)",
 
-            hotel_name:"Dweep Mahal - Holidays Collections",
-            hotel_image:honeymoon,
-            hotel_star:"****",
-            hotel_location:"kavaratti",
-            hotel_booking_date:"1 October - 3 October, 2 Nights"
+        {
+          day: 2,
+          day_Heading:"Arrival at Agatti Airport",
+          description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
+         images:[honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon],
+        
+          accommodation:[ {
+            hotel_name: "Dweep Mahal - Holidays Collections",
+            hotel_image: honeymoon,
+            stars: "****",
+            location: "Kavaratti",
+            booking_date: "1 October - 3 October, 2 Nights"
+          }
+        ],
 
-            
-          },
-       
-        ]
+          activity:[ 
+            {
+              name: "Beach Relaxation",
+              description: "Spend the evening relaxing on the serene beaches of Kavaratti Island.",
+              images: [honeymoon, honeymoon]
+            },
+            {
+              name: "Welcome Drink & Hotel Briefing",
+              description: "Receive a warm welcome with a refreshing drink at the hotel, followed by a briefing on the facilities."
+            }
+          ],
+
+          food:  ["breakfast", "lunch", "dinner- biriyani"]
+          
+        },
+
+        {
+          day: 3,
+          day_Heading:"Arrival at Agatti Airport",
+          description:"Upon arrival at Agatti Airport, you'll be escorted to the Eastern Jetty for a speedboat transfer to Kavaratti Island (2-2.5 hours). At the hotel, you'll receive a warm welcome with a refreshing drink, followed by a briefing on the Holiday Home facilities. Spend your evening relaxing on the serene beaches of Kavaratti. Note: The above itinerary is subject to weather conditions and may be adjusted for your convenience & based on Ferry schedules.",
+         images:[honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon,honeymoon],
+          travel: [
+            {
+              mode: "Flight",
+              from: "Kerala",
+              to: "Lakshadweep",
+              duration: "07h 15m",
+              flight:[ 
+                {
+                number: "6E-2069",
+                from: "New Delhi",
+                to: "Lakshadweep",
+                duration: "07h 15m",
+                start_time: "05:45",
+                start_date: "Tue, 01 Oct",
+                reach_time: "09:45",
+                reach_date: "Tue, 01 Oct",
+                weight: "7 Kgs (1 piece only)"
+              },
+              {
+
+                number: "6E-20644",
+                from: "goa",
+                to: "Lakshadweep",
+                duration: "02h 15m",
+                start_time: "05:45",
+                start_date: "Tue, 01 Oct",
+                reach_time: "09:45",
+                reach_date: "Tue, 01 Oct",
+                weight: "7 Kgs (1 piece only)"
+              }
+            ]
+            },
+          
+          
+          ],
+          accommodation:[ {
+            hotel_name: "Dweep Mahal - Holidays Collections",
+            hotel_image: honeymoon,
+            stars: "****",
+            location: "Kavaratti",
+            booking_date: "1 October - 3 October, 2 Nights"
+          }
+        ],
+
+          activity:[ 
+            {
+              name: "Beach Relaxation",
+              description: "Spend the evening relaxing on the serene beaches of Kavaratti Island.",
+              images: [honeymoon, honeymoon]
+            },
+            {
+              name: "Welcome Drink & Hotel Briefing",
+              description: "Receive a warm welcome with a refreshing drink at the hotel, followed by a briefing on the facilities."
+            }
+          ],
+
+          food:  ["breakfast", "lunch", "dinner- biriyani"]
+          
         }
-      
-    }
-]  
+      ],
+    
+  }
+}
+]
 
 
 export const featers = [
