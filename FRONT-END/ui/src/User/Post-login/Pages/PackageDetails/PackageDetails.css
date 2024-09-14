@@ -7,12 +7,10 @@
   color:#ffffff;
   /* color: inherit; */
   font-weight: var(--font-weight, 900);
-  line-height: 36px;
 }
 .sub-heading{
   color:#ffffff;
   font-weight: var(--font-weight, 300);
-  line-height: 36px;
 }
 
 .left-inner-container {
