@@ -33,12 +33,12 @@ const HomePage = () => {
        <Services/>
        {/* <Virtual/> */}
        <Packages/>
+       </div>
     
       <div className='mb-20  w-11/12 mx-auto'>
        <h1 className='happy-clients  '>OUR HAPPY CLIENTS</h1>
        <iframe src="https://widget.taggbox.com/157839" style={{width:'100%',height:'700px',border:'none'}}></iframe>
       </div>   
-      </div> 
     </>
   );
 };

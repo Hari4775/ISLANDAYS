@@ -4,5 +4,12 @@
 @tailwind utilities;
 
 body{
-    background-color: black;
+    /* background-color:#141627; */
+    color: black;
+    font-family: "Switzer" !important;
+
+    /* background-repeat: no-repeat; */
+    /* background-image: url(../src/assets/images/Gradient\ 19.svg);
+    background-size: cover;  */
+    /* background-position: center;  */
 }
