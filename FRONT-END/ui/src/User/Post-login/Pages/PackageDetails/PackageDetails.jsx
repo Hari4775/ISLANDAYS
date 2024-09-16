@@ -100,52 +100,31 @@ const calkulateTotals =()=>{
 const totals =calkulateTotals ()
   return (
   <div className=" w-full mx-auto    main-container " >
-    <div className='main-Heading-container mb-4 w-11/12 mx-auto pt-10'>
-      <h1 className='main-heading text-4xl'>{packageDetailsData?.title}</h1>
-      <div className='flex space-x-4 '>
-        <div className='custamizable-box flex'>
-          <p className='sub-heading text-md'>Custamizable</p>
+  
+    <div className='top-container'>
+       <div className='main-Heading-container mb-4 w-11/12 mx-auto pt-10'>
+            <h1 className='heading text-4xl'>{packageDetailsData?.title}</h1>
+            <div className='flex space-x-4 '>
+                 <div className='custamizable-box flex'>
+                      <p className='sub-heading text-md'>Custamizable</p>
+                 </div>
+                 <p className='sub-heading text-md'>{packageDetailsData?.subtitle}</p>
+           </div>
         </div>
-        <p className='sub-heading text-md'>{packageDetailsData?.subtitle}</p>
-      </div>
+        <div className='image-gallery-container  flex h-56 w-11/12 mx-auto '>
+            <div className=' w-4/12 mr-2  h-48 '>
+                 <img className='h-full w-full ' src={thinnakkara} />
+            </div>asdf
+        </div>
     </div>
-    <div className='image-gallery-container  flex h-56 w-11/12 mx-auto overflow-x-scroll'>
- 
-  <div className=' w-4/12 mr-2'>
-    <img className='h-full w-full' src={thinnakkara} />
-  </div>
-
-  <div className=' w-4/12 flex'>
-    <div className='w-1/2 bg-orange mr-2'>
-      <div className='w-full h-1/2 mb-2'>
-        <img className='h-full w-full' src={thinnakkara} />
-      </div>
-      <div className='w-full  h-1/2'>
-        <img className='h-full w-full' src={thinnakkara} />
-      </div>
-    </div>
-
-    <div className='w-1/2 '>
-      <div className='w-full  h-1/2 mb-2'>
-        <img className='h-full w-full' src={thinnakkara} />
-      </div>
-      <div className='w-full  h-1/2'>
-        <img className='h-full w-full' src={thinnakkara} />
-      </div>
-    </div>
-  </div>
   
 
-  <div className='w-4/12 ml-2'>
-    <img className='h-full w-full' src={thinnakkara} />
-  </div>
-</div>
 
-    <div className='heading-bar-container w-11/12 mx-auto flex my-5 space-x-5'>
-        <h1 className={`heading ${activeSectionUnderLines('trip_Plan')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('trip_Plan')}>TRIP PLAN</h1>
+
+    <div className='heading-bar-container  mx-auto flex mt-2 space-x-5'>
+        <h1 className={`heading ml-12 ${activeSectionUnderLines('trip_Plan')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('trip_Plan')}>TRIP PLAN</h1>
         <h1 className={`heading ${activeSectionUnderLines('policy')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('policy')}>POLICY</h1>
         <h1 className={`heading ${activeSectionUnderLines('summary')} transition-all duration-300 ease-in-out`} onClick={() => setActiveSection('summary')}>SUMMARY</h1>
-
     </div>
     <div className='iternerary-container second-parent-container'>
       <div className='second-inner-container flex bg-yellow w-11/12 mx-auto pt-5 '>
@@ -165,30 +144,30 @@ const totals =calkulateTotals ()
                        ))}
                   </div>
                
-
-                <div className='menu-bar  flex w-full space-x-12 bg-red-400'>
+                <div className='plan-detail-card   image-container '>
+                   <div className='menu-bar  flex w-full space-x-12 '>
                       <p  className={`heading  text-lg my-5 ml-20 ${planCategoryUnderLines('day')} transition-all duration-300 ease-in-out`}onClick={() => setplanCategorySection('day')}>{totals.totalDays} Days Plan</p>
                       <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('travel')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('travel')}>{totals.totalFlights} Flights</p>
                       <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('accomadation')} transition-all duration-300 ease-in-out`} onClick={() => setplanCategorySection('accomadation')}> {totals.totalAccommodations} Hotels </p>
                       <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('activity')} transition-all duration-300 ease-in-out`}   onClick={() => setplanCategorySection('activity')}> {totals.totalActivities} Activitys</p>
                       <p  className={`heading  text-lg my-5  ${planCategoryUnderLines('food')} transition-all duration-300 ease-in-out`}  onClick={() => setplanCategorySection('food')}>{totals.totalFood} Meals</p>
-                </div>
+                   </div>
 
-                {/* plan-detail-container start */}
-                <div className='plan-details-container flex w-full   '>
+                    {/* plan-detail-container start */}
+                    <div className='plan-details-container flex w-full '>
                    <div className='time-line-container w-3/12 '>
                        <h1 className='day-plan-heading mt-5'>Day Plan</h1>
                     </div>
 
                      {planCategorySection==="day"&&(            
-                    <div className='day-plan-data-container w-9/12 '>
+                    <div className='day-plan-data-container w-9/12 mx-auto  h-80 overflow-y-auto mb-3 '>
                       {/* common-heading-section */}
                       {dayPlan.map((planItem,index)=>(
 
                       <div key={index}>
                      
                         <div className='each-day-headings flex'>
-                            <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day {planItem?.day}</button>
+                            <button className='bg-red-400 rounded-lg w-1/12 my-5 '>Day {planItem?.day}</button>
                             <p className='ml-5 my-5 sub-heading'>{planItem?.day_Heading} </p>
                             <p className='ml-4 my-5 sub-heading'>included:</p>
                             <p className='my-5 ml-3 sub-heading'>{planItem?.travel?.length} Flight</p>
@@ -198,7 +177,7 @@ const totals =calkulateTotals ()
                          </div>
 
                          {/* package description section */}
-                        <div className='place-details-section  mx-auto'>
+                        <div className='place-details-section w-10/12 mx-auto'>
                             <p className=' text-xs mb-5 sub-heading'>{planItem?.description}</p>
                             
 
@@ -214,13 +193,13 @@ const totals =calkulateTotals ()
                         </div>
 
                             {/* travel section */}
-                        <div className='travel-section'>
+                        <div className='travel-section  w-10/12 mx-auto'>
                         {planItem?.travel?.map((travelItem,travelIndex)=>(
 
                          
                         <div key={travelIndex} className=''>
-                          <div className='travel-heading flex'>
-                              <div className='w-8/12 space-x-2 flex ml-5'>
+                          <div className='travel-heading flex '>
+                              <div className=' space-x-2 flex '>
                                   <h1 className='sub-heading'>{travelItem?.mode}</h1>
                                   <p className='sub-heading'>{travelItem?.from}</p>
                                   <p className='sub-heading'>{travelItem?.to}</p>
@@ -233,9 +212,9 @@ const totals =calkulateTotals ()
                               </div>
                           </div>
                           {Array.isArray(travelItem?.flight) && travelItem.flight.map((flightItem, flightIndex) => (
-                          <div key={flightIndex} className='travel-data-contaier mb-10'>
+                          <div key={flightIndex} className='travel-data-contaier mb-10  '>
 
-                            <div className='flex w-10/12 mx-auto'>
+                            <div className='flex '>
                                 <div className='travel-image-section mt-5'>
                                     <img className='mb-2' src={flightimage}/>
                                     <p className='traveller-name'>{flightItem?.number}</p> 
@@ -270,7 +249,7 @@ const totals =calkulateTotals ()
 
                           {/* accomadation section */}
                           {Array.isArray(planItem.accommodation) && planItem.accommodation.map((accomadationItem,accomadationIndex) => (  
-                        <div key={accomadationIndex} className='accomodation-image-container flex mb-10'>
+                        <div key={accomadationIndex} className='accomodation-image-container flex mb-10 w-10/12 mx-auto'>
                               <div className='w-6/12 '>
                                 <img className='h-56 w-full' src={accomadationItem?.hotel_image}/>
                               </div>
@@ -289,9 +268,9 @@ const totals =calkulateTotals ()
                         {/* activity section */}
                         {Array.isArray(planItem.activity) && planItem.activity.map((activityItem,activityIndex)=>(
 
-                        <div key={activityIndex} >
+                        <div key={activityIndex} className='w-10/12 mx-auto' >
                                <div className='activity-container flex mb-10'>
-                                       <div className='w-5/12 bg-green-400 h-48'>
+                                       <div className='w-5/12  h-48'>
                                         <img src={activityItem?.images}/>
                                        </div>
                                        <div className='w-7/12  ml-auto'>
@@ -316,7 +295,7 @@ const totals =calkulateTotals ()
 
             
                      {planCategorySection === "travel" && (
-                         <div className='day-plan-data-container w-9/12'>
+                         <div className='day-plan-data-container w-9/12  h-80 overflow-y-auto mb-3 '>
                             {dayPlan.map((planItem, index) => (
                                  <div key={index}>
                                       <div className='each-day-headings flex'>
@@ -379,7 +358,7 @@ const totals =calkulateTotals ()
 
 
                      {planCategorySection==="accomadation" && (
-                      <div className='day-plan-data-container w-9/12 '>
+                      <div className='day-plan-data-container w-9/12  h-80 overflow-y-auto mb-3 '>
                       {dayPlan.map((planItem, index) => (
                       <div key={index}>
                             <div className='each-day-headings flex'>
@@ -423,7 +402,7 @@ const totals =calkulateTotals ()
                      )}   
 
                      {planCategorySection==="activity" && (
-                         <div className='day-plan-data-container w-9/12 '>
+                         <div className='day-plan-data-container w-9/12  h-80 overflow-y-auto mb-3 '>
                           {dayPlan.map((planItem, index) => (
                             <div key={index}>
                                <div className='each-day-headings flex'>
@@ -459,7 +438,7 @@ const totals =calkulateTotals ()
                       )}   
 
                       {planCategorySection==="food" && (
-                         <div className='day-plan-data-container w-9/12 bg-red-500'>
+                         <div className='day-plan-data-container w-9/12   h-80 overflow-y-auto mb-3 '>
                 <div className='each-day-headings flex '>
                    <button className='bg-red-400 rounded-lg w-1/12 my-5 ml-5'>Day 1</button>
                    <p className='ml-5 my-5 '>Arrival at Agatti Airport </p>
@@ -478,17 +457,15 @@ const totals =calkulateTotals ()
                </div>
                          </div>
                        )}
-                </div> 
-                {/* plan detail container end */}
-
-
-
-           </div>
+                    </div> 
+                    {/* plan detail container end */}
+                </div>
+             </div>
         )}
 
              {activeSection === 'policy' && (
     
-        <div className='w-full '>
+        <div className='w-full   h-96 overflow-y-auto mb-3'>
          <div className='policies-data mb-2  '>
           <div className='ml-10'>
            <h1 className='policy-Heading lg:text-2xl text-lg mb-2 mt-5'>Cancellation & Date Change</h1>
@@ -559,7 +536,7 @@ const totals =calkulateTotals ()
              )}
       </div>
     
-      <div className='left-inner-container w-3/12 ml-10 '> 
+      <div className='left-inner-container w-3/12  ml-10 '> 
     <div className='payment-section bg-slate-400 shadow-lg rounded-lg shadow-blue-400'>
         <div className='flex w-11/12 mb-3 mx-auto pt-5'>
             <h1 className='text-5xl font-extrabold '>₹1,11,998</h1>
@@ -575,152 +552,10 @@ const totals =calkulateTotals ()
  </div>
 
     </div>
+    
      </div>
-      {/* <div className='w-5/12  fixed left-4 top-32 lg:top-24  image-container  '>
-        <div className='w-11/12 mx-auto bg-green-500 my-5 h-96'
-            style={{ 
-              backgroundImage: `url(${placeImage || packageDetail.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }}>
-        </div>
-        <div className='w-11/12 mx-auto'>
-        <button class="bg-green-700 w-full  hover:bg-green-900 text-white font-bold py-3 px-4  rounded-lg ">
- Book Now
-</button>
-        </div>
-     </div>
-      <div className='w-7/12  description-container ml-auto'>
-       <h1 className='package-name my-10 ml-12'>{packageDetail?.title}</h1>  
-       <p className='special-price ml-12'>Special Price</p>
-       <div className='flex ml-12'>
-         <h1 className='package-price mb-5 mr-3 package-name'>₹{packageDetail?.price} </h1>
-         <p className='real-price mr-3 mt-3'>1189</p>
-         <p className='offer-persentage mt-3'>{packageDetail?.offer}</p>
-       </div>
-       <div className='duration flex mb-5 ml-12'>
-          <h1 className='duration-text mr-5'>Tour Duration</h1>
-          <h1 className='duration-value'>{packageDetail?.days}</h1>
-        </div>
-       <ul className='mb-5 ml-12'>
-        {packageDetail?.specification.split(',').map((spec, i) => (
-                        <div className='flex mb-2'>
-                          <img className='w-5 mr-1' src={bookmark}/>
-                          <li className='' key={i}>{spec.trim()}</li>
-                        </div>
-                        
-                      ))}
-        </ul>
       
-        <div className='duration ml-12'>
-          <h1 className='package-description'>{packageDetail?.description}  </h1>
-        </div>
-      
-      
-      
-
-          <h1 className='package-name text-center my-10'>OUR TRIP PLAN</h1>
-            <div className="timeline w-full md:w-3/5 mx-auto flex mb-5 ">
-           
-            {packageDetail.plan.map((dayDetail, index) => (
-        <div className="timeline-item  w-full bg-sky-50" key={index}>
-          <div
-            className={`timeline-content flex justify-center mb-10 items-center ${index % 2 === 0 ? 'left' : 'right'}`}
-            onClick={() => setSelectedDay(dayDetail.day)} // Set the selected day on click
-            style={{ cursor: 'pointer' }} // Adjust height as needed
-          >
-            <h2
-              className={`mt-10 text-center ${selectedDay === dayDetail.day ? 'text-blue-600 font-bold underline' : 'text-gray-500'}`}
-              style={selectedDay === dayDetail.day ? { textDecorationThickness: '3px', fontSize: '1.5rem' } : { fontSize: '1rem' }}
-            >
-              DAY {dayDetail.day}
-            </h2>
-          </div>
-        </div>
-      ))}
-            </div>
-
-            {packageDetail.plan.map((dayDetail, index) => (
-              selectedDay === dayDetail.day && (
-                <div className="day-details timeline bg-sky-50     w-10/12  mx-auto" key={index} >
-                  <div className={`timeline-content ${index % 2 === 0 ? 'left' : 'right'}`}>
-                  <h2 className='py-10 text-center text-blue-600 font-bold text-3xl underline'>DAY {dayDetail.day} COMPLETE PLAN</h2>
-                    <div className=' w-11/12  mx-auto '>
-                    
-                  <div className='accomodation-container  mb-10 '>
-                   
-                    <div className=' mx-4'>
-                    <p className='duration-text pt-3'>ACCOMODATION</p>
-                    </div>
-
-                    <div className='w-full flex overflow-x-hidden ' >
-                      {dayDetail.placesVistiting.map((place, i) => (
-                        <div className='w-1/3 h-32 mx-2 small-image mt-4 mb-8  relative'  style={{ backgroundImage: `url(${place?.placeImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                          key={i}
-                          onMouseEnter={() => handlePlaceEnter(place?.placeImage)}
-                          onMouseLeave={handlePlaceLeave}
-                          >
-                              <div className='absolute bottom-0 w-full bg-opacity-50 bg-black'>
-        <h1 className='text-center text-white'> {place.placeName}</h1>
-      </div>
-                         
-                        </div>
-                      ))}
-                    </div>
-
-                  </div>
-                   
-                   
-                    <div className='accomodation-container  mb-10'>
-                      <div className=' mx-4'>
-                      <p className='duration-text mt-5'>PLACES VISITING </p>
-                      </div>
-                  
-                      <div className='w-full flex overflow-x-hidden' >
-                      {dayDetail.placesVistiting.map((place, i) => (
-                        <div className='w-1/3 h-32 mx-2 small-image my-4 relative'  style={{ backgroundImage: `url(${place?.placeImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                          key={i}
-                          onMouseEnter={() => handlePlaceEnter(place?.placeImage)}
-                          onMouseLeave={handlePlaceLeave}
-                          >
-                         <div className='absolute bottom-0 w-full bg-opacity-50 bg-black'>
-        <h1 className='text-center text-white'> {place.placeName}</h1>
-      </div>
-                        </div>
-                      ))}
-                      </div>
-            
-                    </div>
-
-                    
-
-                    <div className='accomodation-container mb-32'>
-                     <div className=' mx-4'>
-                      <p  className='duration-text'>ACTIVITY PLAN</p>
-                     </div>
-                    
-                     <div className='w-full flex overflow-x-hidden' >
-                      {dayDetail?.activities.map((place, i) => (
-                       <div className='w-1/3 h-32 mx-2 small-image my-4 relative'  style={{ backgroundImage: `url(${place?.activityImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                          key={i}
-                          onMouseEnter={() => handlePlaceEnter(place.activityImage)}
-                          onMouseLeave={handlePlaceLeave}
-                        >
-                          <div className='absolute bottom-0 w-full bg-opacity-50 bg-black'>
-                          <h1 className='text-center text-white'> 
-                          {place?.activityName}</h1>
-                          </div>
-                      </div>
-                      ))}
-                    </div>
-                  </div>
-                 </div>
-                  </div>
-                </div>
-              )
-            ))}
         
-  </div> */}
 </div>  
  
 
