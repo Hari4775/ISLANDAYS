@@ -14,7 +14,7 @@ const Card = ({ data }) => {
           {/* <p className="text-gray-700">{data?.description}</p> */}
         </div>
       </div>
-    </div>
+    </div> 
   )
 }
 
