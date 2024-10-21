@@ -24,6 +24,7 @@
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "slick-carousel": "^1.8.1",
+    "ui": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
